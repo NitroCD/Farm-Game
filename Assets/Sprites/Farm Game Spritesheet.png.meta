@@ -1,0 +1,2076 @@
+fileFormatVersion: 2
+guid: 4004f285d4a8df14faf9423d97a64711
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6022726258067768498
+    second: toolScythe
+  - first:
+      213: -8889586617339909834
+    second: toolShovel
+  - first:
+      213: -983190523252155448
+    second: toolAxe
+  - first:
+      213: -4705872902861809835
+    second: toolWateringCanFull
+  - first:
+      213: 4613560591518944806
+    second: toolWateringCanHalf
+  - first:
+      213: 597752668665947284
+    second: toolWateringCanEmpty
+  - first:
+      213: 4536990917813742148
+    second: playerUp1
+  - first:
+      213: -4073808783811504408
+    second: playerLeft1
+  - first:
+      213: -3917451130354685942
+    second: playerRight1
+  - first:
+      213: 1745219932412691571
+    second: playerRight2
+  - first:
+      213: -3450426313734175496
+    second: playerLeft2
+  - first:
+      213: 1454178966013965794
+    second: playerUp2
+  - first:
+      213: -3628490564363597471
+    second: playerDown2
+  - first:
+      213: -5850090043214492229
+    second: playerDown1
+  - first:
+      213: 4470691577050852666
+    second: HotbarEnd
+  - first:
+      213: 5665155538597598206
+    second: HotbarMiddle
+  - first:
+      213: -3703533767976258221
+    second: HotbarSelect
+  - first:
+      213: 132862460994304646
+    second: wellEmpty
+  - first:
+      213: 4249852073908194234
+    second: wellFull1
+  - first:
+      213: -7932066345113571084
+    second: Farmland
+  - first:
+      213: -868009457509690499
+    second: cropWheat0
+  - first:
+      213: -543383400239277146
+    second: cropWheat1
+  - first:
+      213: 479237633275075956
+    second: cropWheat2
+  - first:
+      213: -2500188252738543107
+    second: pathDirtStraight
+  - first:
+      213: 3489236587273187438
+    second: pathDirtCorner
+  - first:
+      213: 562772151988442521
+    second: FarmlandW
+  - first:
+      213: 2777061042459780004
+    second: cropWheatW0
+  - first:
+      213: 8272444216464782283
+    second: cropWheatW1
+  - first:
+      213: -4343553444069121181
+    second: cropWheatW2
+  - first:
+      213: -3969196296909080647
+    second: pathDirtTShape
+  - first:
+      213: 8742908589262325589
+    second: pathDirtIntersection
+  - first:
+      213: -2983277327380192447
+    second: wellFull2
+  - first:
+      213: 7598943940033973440
+    second: particleGreen1
+  - first:
+      213: -8229633241583155509
+    second: particleGreen2
+  - first:
+      213: 7265628875458779145
+    second: particleGreen3
+  - first:
+      213: 5849912267293778576
+    second: iconWheatseeds
+  - first:
+      213: 5239629842347380573
+    second: iconWheat
+  - first:
+      213: -8564135723442770559
+    second: iconCoin
+  - first:
+      213: 2424386309178599400
+    second: iconWood
+  - first:
+      213: -5198486892526507029
+    second: particleBrown1
+  - first:
+      213: 8282610678342845073
+    second: particleBrown2
+  - first:
+      213: -6027328630205091162
+    second: particleBrown1
+  - first:
+      213: -1521243960825324915
+    second: particleBrown2
+  - first:
+      213: 6583334192156102234
+    second: floorGrass
+  - first:
+      213: -4246322126600399877
+    second: pathDirtEnd
+  - first:
+      213: -607129365261263414
+    second: shopBuy
+  - first:
+      213: -5291124028206261020
+    second: UIBackground
+  - first:
+      213: 9075612816849777693
+    second: UIBorder
+  - first:
+      213: -6698852782278627472
+    second: shopSell
+  - first:
+      213: 3205427326565735355
+    second: stone
+  - first:
+      213: 1642190882041665919
+    second: cropPotato0
+  - first:
+      213: -1280853039890453266
+    second: cropPotato1
+  - first:
+      213: 8236229019611421523
+    second: cropPotato2
+  - first:
+      213: -7554427983624401552
+    second: cropPotatoW2
+  - first:
+      213: -7839184639345555480
+    second: cropPotatoW1
+  - first:
+      213: 7582252297409296176
+    second: cropPotatoW0
+  - first:
+      213: 3528379003881221415
+    second: cropCorn0
+  - first:
+      213: 6306386724069377283
+    second: cropCorn1
+  - first:
+      213: 8635201505021849089
+    second: cropCorn2
+  - first:
+      213: 2041179700631199383
+    second: cropCornW0
+  - first:
+      213: 6006560248518343219
+    second: cropCornW1
+  - first:
+      213: -3100139131292079620
+    second: cropCornW2
+  - first:
+      213: -6442944927736895125
+    second: iconPotato
+  - first:
+      213: -8970100102976399076
+    second: iconCorn
+  - first:
+      213: 8632396247403703066
+    second: iconPotatoseeds
+  - first:
+      213: 8399946411062795689
+    second: iconCornseeds
+  - first:
+      213: 9172847632489116820
+    second: treeMidLeaves
+  - first:
+      213: 3308259655914850948
+    second: treeThicLeaves
+  - first:
+      213: 2330286066328973702
+    second: treeThicTrunk
+  - first:
+      213: 8953722164664263947
+    second: treeMidTrunk
+  - first:
+      213: -8979215221525821256
+    second: Circle
+  - first:
+      213: -6587696899271729465
+    second: toolPickaxe
+  - first:
+      213: -777755127424225199
+    second: floorStone
+  - first:
+      213: 132262095658724783
+    second: stoneOverlay
+  - first:
+      213: -356979916220761490
+    second: iconStone
+  - first:
+      213: -6063008994500500678
+    second: iconStoneOverlay
+  - first:
+      213: -1735640452856824230
+    second: iconWoodBig
+  - first:
+      213: -7990444562904130568
+    second: particleStone1
+  - first:
+      213: -1963945786703274667
+    second: particleStone4
+  - first:
+      213: -2988923309313415745
+    second: particleStone3
+  - first:
+      213: -5791530498351555448
+    second: particleStone2
+  - first:
+      213: -1063748065297224155
+    second: pathStone
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: toolScythe
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 287
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b40c873f95059350800000000000000
+      internalID: 6022726258067768498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toolShovel
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 287
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63963611218d1a480800000000000000
+      internalID: -8889586617339909834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toolAxe
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 287
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cb5603ad610b52f0800000000000000
+      internalID: -983190523252155448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toolWateringCanFull
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 287
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55719c2178161beb0800000000000000
+      internalID: -4705872902861809835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toolWateringCanHalf
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 287
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62e4a3f0ae8a60040800000000000000
+      internalID: 4613560591518944806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toolWateringCanEmpty
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 287
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 494206792e4ab4800800000000000000
+      internalID: 597752668665947284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerUp1
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 268
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44a2675a331a6fe30800000000000000
+      internalID: 4536990917813742148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerLeft1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 268
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e69c0ebe7ce677c0800000000000000
+      internalID: -4073808783811504408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerRight1
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 268
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a08a146d3fa62a9c0800000000000000
+      internalID: -3917451130354685942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerRight2
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 249
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 374c36e2844483810800000000000000
+      internalID: 1745219932412691571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerLeft2
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 249
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f4c63e7c8f9d10d0800000000000000
+      internalID: -3450426313734175496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerUp2
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 249
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e57b15a0184e2410800000000000000
+      internalID: 1454178966013965794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDown2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 249
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16940486e0305adc0800000000000000
+      internalID: -3628490564363597471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playerDown1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 268
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbd862ec91e40dea0800000000000000
+      internalID: -5850090043214492229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HotbarEnd
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3d62767d461b0e30800000000000000
+      internalID: 4470691577050852666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HotbarMiddle
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef3527372fcae9e40800000000000000
+      internalID: 5665155538597598206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HotbarSelect
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3557c1209a76a9cc0800000000000000
+      internalID: -3703533767976258221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wellEmpty
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 82
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68abc8f44b508d100800000000000000
+      internalID: 132862460994304646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wellFull1
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 82
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abb414dc1f18afa30800000000000000
+      internalID: 4249852073908194234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Farmland
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 287
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f0bcac5fa3abe190800000000000000
+      internalID: -7932066345113571084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cropWheat0
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 287
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d73947f4ff534f3f0800000000000000
+      internalID: -868009457509690499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cropWheat1
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 287
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6abd4eb2da38578f0800000000000000
+      internalID: -543383400239277146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cropWheat2
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 287
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47d1c5e961896a600800000000000000
+      internalID: 479237633275075956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pathDirtStraight
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 41
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df12aebd70c8d4dd0800000000000000
+      internalID: -2500188252738543107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pathDirtCorner
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 41
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e60f6b970324c6030800000000000000
+      internalID: 3489236587273187438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FarmlandW
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 246
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 995d0c06a4e5fc700800000000000000
+      internalID: 562772151988442521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cropWheatW0
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 246
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a3246bfd4a1a8620800000000000000
+      internalID: 2777061042459780004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cropWheatW1
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 246
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc33e928f20adc270800000000000000
+      internalID: 8272444216464782283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cropWheatW2
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 246
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 363e55fd72998b3c0800000000000000
+      internalID: -4343553444069121181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pathDirtTShape
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 41
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b730f66ff49ae8c0800000000000000
+      internalID: -3969196296909080647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pathDirtIntersection
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 41
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55741be3a0d055970800000000000000
+      internalID: 8742908589262325589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wellFull2
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 82
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 143e60ba3154996d0800000000000000
+      internalID: -2983277327380192447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particleGreen1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 164
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cc05d5a04fd47960800000000000000
+      internalID: 7598943940033973440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particleGreen2
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 164
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc680b35b287acd80800000000000000
+      internalID: -8229633241583155509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particleGreen3
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 164
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9089a8f97f2b4d460800000000000000
+      internalID: 7265628875458779145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iconWheatseeds
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 230
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 092ee3386301f2150800000000000000
+      internalID: 5849912267293778576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iconWheat
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 211
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5fc6a3b497e6b840800000000000000
+      internalID: 5239629842347380573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iconCoin
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 268
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18de5fb2fe3162980800000000000000
+      internalID: -8564135723442770559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iconWood
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 268
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e729e4d08625a120800000000000000
+      internalID: 2424386309178599400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particleBrown3
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 184
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bebee69c6b34bd7b0800000000000000
+      internalID: -5198486892526507029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particleBrown4
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 184
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1928b7f578eb1f270800000000000000
+      internalID: 8282610678342845073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particleBrown1
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 164
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a275148b80aa5ca0800000000000000
+      internalID: -6027328630205091162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particleBrown2
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 164
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8a5c427da473eae0800000000000000
+      internalID: -1521243960825324915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floorGrass
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 205
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5ec5295193bc5b50800000000000000
+      internalID: 6583334192156102234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pathDirtEnd
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 41
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf31a1a16880215c0800000000000000
+      internalID: -4246322126600399877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UIBackground
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ec5b3cdab62296b0800000000000000
+      internalID: -5291124028206261020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UIBorder
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 38
+        width: 40
+        height: 2
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d143053b5cd03fd70800000000000000
+      internalID: 9075612816849777693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shopBuy
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 82
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acdd4ea1f0b0397f0800000000000000
+      internalID: -607129365261263414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shopSell
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 82
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07f25a5f2e4e803a0800000000000000
+      internalID: -6698852782278627472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stone
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 246
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbbd741ab27fb7c20800000000000000
+      internalID: 3205427326565735355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cropPotato0
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 205
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f799a7118eb3ac610800000000000000
+      internalID: 1642190882041665919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cropPotato1
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 205
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeca9db42fe793ee0800000000000000
+      internalID: -1280853039890453266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cropPotato2
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 205
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35bd3bae7a6fc4270800000000000000
+      internalID: 8236229019611421523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cropPotatoW2
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 164
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07d0cc226c7492790800000000000000
+      internalID: -7554427983624401552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cropPotatoW1
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 164
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e70c13ba1f953390800000000000000
+      internalID: -7839184639345555480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cropPotatoW0
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 164
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0377870ca42993960800000000000000
+      internalID: 7582252297409296176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cropCorn0
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 123
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72d6947820257f030800000000000000
+      internalID: 3528379003881221415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cropCorn1
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 123
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30505681059c48750800000000000000
+      internalID: 6306386724069377283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cropCorn2
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 123
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10eeebe740666d770800000000000000
+      internalID: 8635201505021849089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cropCornW0
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 82
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79e5cd28f1ab35c10800000000000000
+      internalID: 2041179700631199383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cropCornW1
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 82
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33afaeec8b69b5350800000000000000
+      internalID: 6006560248518343219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cropCornW2
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 82
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf92c05a2e71af4d0800000000000000
+      internalID: -3100139131292079620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iconPotato
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 211
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6966d279bf0696a0800000000000000
+      internalID: -6442944927736895125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iconCorn
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 211
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1995626b7dc38380800000000000000
+      internalID: -8970100102976399076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iconPotatoseeds
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 230
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1ba9ee86ae6cc770800000000000000
+      internalID: 8632396247403703066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iconCornseeds
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 230
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ad17bb81ca929470800000000000000
+      internalID: 8399946411062795689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: treeMidLeaves
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 164
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 494fb4962508c4f70800000000000000
+      internalID: 9172847632489116820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: treeThicLeaves
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 123
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48a8f8f01ac49ed20800000000000000
+      internalID: 3308259655914850948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: treeThicTrunk
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 123
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 681b498b4d6d65020800000000000000
+      internalID: 2330286066328973702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: treeMidTrunk
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 164
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b05ea52bed2024c70800000000000000
+      internalID: 8953722164664263947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Circle
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 0
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b84c27745b636380800000000000000
+      internalID: -8979215221525821256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toolPickaxe
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 287
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ce57feb29cc394a0800000000000000
+      internalID: -6587696899271729465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: floorStone
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 205
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 150f3a315dbd435f0800000000000000
+      internalID: -777755127424225199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stoneOverlay
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 246
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fadacfcdca3e5d100800000000000000
+      internalID: 132262095658724783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iconStone
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 268
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6a76b558a0cb0bf0800000000000000
+      internalID: -356979916220761490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iconStoneOverlay
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 268
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a33acc4517ddbdba0800000000000000
+      internalID: -6063008994500500678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: iconWoodBig
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 246
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5ebba53434c9e7e0800000000000000
+      internalID: -1735640452856824230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particleStone1
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 184
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fbd5a6510d3c1190800000000000000
+      internalID: -7990444562904130568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particleStone4
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 184
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55d1d6166b9aeb4e0800000000000000
+      internalID: -1963945786703274667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particleStone3
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 164
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb52d7f06163586d0800000000000000
+      internalID: -2988923309313415745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: particleStone2
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 164
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88c1ae352b950afa0800000000000000
+      internalID: -5791530498351555448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pathStone
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 205
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52e237545cecc31f0800000000000000
+      internalID: -1063748065297224155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
