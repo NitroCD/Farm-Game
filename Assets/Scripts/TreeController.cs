@@ -150,14 +150,9 @@ public class TreeController : MonoBehaviour
             case var n when n < 60:
                 thisTreeType = TreeType.treeMedium;
                 break;
-            // the other 40% of the time, it will be a large tree.
+            // 40% of the time it will be a large tree
             case var n when n < 100:
                 thisTreeType = TreeType.treeLarge;
-                break;
-            // this should not be possible and will give a debug string if it happens
-            default:
-                Debug.Log("error");
-                thisTreeType = TreeType.treeMedium;
                 break;
         }
     }

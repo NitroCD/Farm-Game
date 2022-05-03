@@ -19,6 +19,8 @@ public class GameManager : MonoBehaviour
     //Tree variables
     public GameObject treePrefab;
     public Transform[] treeSpawnAreas;
+    public GameObject stonePrefab;
+    public Transform[] stoneSpawnAreas;
 
     //load data variables
     public PlayerController playerScript;
@@ -46,6 +48,7 @@ public class GameManager : MonoBehaviour
         SaveMenuCloser();
         SpawnTileButtons();
         SpawnTrees();
+        SpawnStones();
     }
 
     //runs when the player presses the "Settings" button in-game
@@ -66,6 +69,14 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < 28; i++)
         {
             Instantiate(treePrefab, treeSpawnAreas[i]);
+        }
+    }
+
+    public void SpawnStones()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            Instantiate(stonePrefab, stoneSpawnAreas[i]);
         }
     }
 
