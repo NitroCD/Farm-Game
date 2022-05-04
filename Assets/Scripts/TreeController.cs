@@ -18,6 +18,7 @@ public class TreeController : MonoBehaviour
     public GameObject treeEffectsPrefab;
     public GameObject[] treeTypes;
     public Collider2D[] treeColliderArray;
+    //public GameObject[] effectTypes 
 
     private void Start()
     {
