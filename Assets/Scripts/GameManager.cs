@@ -19,7 +19,11 @@ public class GameManager : MonoBehaviour
     //Tree variables
     public GameObject treePrefab;
     public Transform[] treeSpawnAreas;
+    public GameObject treeSpawnParent;
+
+    //Stone variables
     public GameObject stonePrefab;
+    public GameObject stoneSpawnParent;
     public Transform[] stoneSpawnAreas;
 
     //load data variables
@@ -48,7 +52,8 @@ public class GameManager : MonoBehaviour
         SaveMenuCloser();
         SpawnTileButtons();
         SpawnTrees();
-        SpawnStones();
+        SpawnTreeArray();
+        SpawnStoneArray();
     }
 
     //runs when the player presses the "Settings" button in-game
@@ -72,14 +77,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void SpawnStones()
-    {
-        for (int i = 0; i < 10; i++)
-        {
-            Instantiate(stonePrefab, stoneSpawnAreas[i]);
-        }
-    }
-
     void SpawnTileButtons()
     {
         for(int i= -10; i < 11; i++)
@@ -93,6 +90,55 @@ public class GameManager : MonoBehaviour
             }
         }
         tileButtonParent.SetActive(false);
+    }
+
+    void SpawnStoneArray()
+    {
+        bool canSpawn = true;
+        float randomRange = 0.45f;
+        for(int x = -30; x < 31; x++)
+        {
+            for(int y = 10; y > -11; y--)
+            { 
+                if(canSpawn)
+                {
+                    float randomFloatX = Random.Range(-randomRange, randomRange);
+                    float randomFloatY = Random.Range(-randomRange, randomRange);
+                    GameObject newStone = Instantiate(stonePrefab, stoneSpawnParent.transform);
+                    Vector3 position = new Vector3(x+randomFloatX, y+randomFloatY + 35, 0);
+                    newStone.transform.position = position;
+                    canSpawn = false;
+                }
+                else
+                {
+                    canSpawn = true;
+                }
+            }
+        }
+    }
+    void SpawnTreeArray()
+    {
+        bool canSpawn = true;
+        float randomRange = 0.5f;
+        for (int x = -30; x < 31; x += 3)
+        {
+            for (int y = 10; y > -11; y -= 3)
+            {
+                if (canSpawn)
+                {
+                    float randomFloatX = Random.Range(-randomRange, randomRange);
+                    float randomFloatY = Random.Range(-randomRange, randomRange);
+                    GameObject newTree = Instantiate(treePrefab, treeSpawnParent.transform);
+                    Vector3 position = new Vector3(x + randomFloatX, y + randomFloatY - 25, 0);
+                    newTree.transform.position = position;
+                    //canSpawn = false;
+                }
+                else
+                {
+                    canSpawn = true;
+                }
+            }
+        }
     }
 
     //saves the game (triggered by "save" button)
