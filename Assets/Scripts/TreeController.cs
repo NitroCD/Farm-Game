@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TreeController : MonoBehaviour
 {
+    //private variables
     bool checkForInput = false;
     float harvestCooldown;
     float timeSinceHarvest;
@@ -11,35 +12,42 @@ public class TreeController : MonoBehaviour
     int timesHit = 0;
     int requiredHits;
     int woodIncrement;
+    TreeType thisTreeType;
+
+    //public variables
     public GameObject treeEffectsPrefab;
     public GameObject[] treeTypes;
-    TreeType thisTreeType;
     public Collider2D[] treeColliderArray;
 
     private void Start()
     {
-        //Turn off the trees,
+        // Turn off the trees,
         Activate(false);
-        //Randomize the type of tree,
+        // Randomize the type of tree,
         randomizeTreeType();
-        //Turn back on the trees.
+        // Turn back on the trees.
         Activate(true);
     }
 
     private void Update()
     {
-        if (checkForInput)
-        {
-            if (PlayerController.currentHBSlot == 3 && PlayerController.currentHotbar == Hotbar.Tool && PlayerController.axeUnlocked && Input.GetKeyDown(KeyCode.E))
-            {
-                Harvest();
-            }            
-        }
+        //activate the tree if its time
         if(!isActive)
         {
             if (Time.time - timeSinceHarvest >= harvestCooldown)
             {
                 Activate(true);
+            }
+        }
+        //if its active, see if the player can harvest
+        else
+        {
+            if (checkForInput)
+            {
+                if (PlayerController.currentHBSlot == 3 && PlayerController.currentHotbar == Hotbar.Tool && PlayerController.axeUnlocked && Input.GetKeyDown(KeyCode.E))
+                {
+                    Harvest();
+                }
             }
         }
     }
@@ -54,18 +62,18 @@ public class TreeController : MonoBehaviour
         switch (thisTreeType)
         {
             case TreeType.treeMedium:
-                //change these ints for different tree types
+            ///change these ints for different tree types
                 requiredHits = 3; //input 1 for the tree to be broken in 1 hit, 2 for 2 hits, etc.
                 woodIncrement = 1; //amount of wood given when the tree is broken
 
                 // increments the hit count and spawns particles
-                if (timesHit < requiredHits - 1 && isActive)
+                if (timesHit < requiredHits - 1)
                 {
                     timesHit++;
                     Instantiate(treeEffectsPrefab, gameObject.GetComponentInParent<Transform>());
                 }
                 // On the third hit (0,1,2), destroy the object
-                else if (timesHit == requiredHits - 1 && isActive)
+                else if (timesHit == requiredHits - 1)
                 {
                     timesHit = 0;
                     Instantiate(treeEffectsPrefab, gameObject.GetComponentInParent<Transform>());
@@ -77,18 +85,18 @@ public class TreeController : MonoBehaviour
                 }
                 break;
             case TreeType.treeLarge:
-                //change these ints for different tree types
+            ///change these ints for different tree types
                 requiredHits = 5; //input 1 for the tree to be broken in 1 hit, 2 for 2 hits, etc.
                 woodIncrement = 2; //amount of wood given when the tree is broken
 
                 // increments the hit count and spawns particles
-                if (timesHit < requiredHits - 1 && isActive)
+                if (timesHit < requiredHits - 1)
                 {
                     timesHit++;
                     Instantiate(treeEffectsPrefab, gameObject.GetComponentInParent<Transform>());
                 }
                 // On the fifth hit (0,1,2,3,4), destroy the object
-                else if (timesHit == requiredHits - 1 && isActive)
+                else if (timesHit == requiredHits - 1)
                 {
                     timesHit = 0;
                     Instantiate(treeEffectsPrefab, gameObject.GetComponentInParent<Transform>());

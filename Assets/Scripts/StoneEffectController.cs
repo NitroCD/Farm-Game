@@ -5,7 +5,7 @@ using UnityEngine;
 public class StoneEffectController : MonoBehaviour
 {
     // Destruction variables
-    float destructionTime = 0.5f;
+    float destructionTime = 1f;
     float instantiatedTime;
 
     // Start is called before the first frame update
