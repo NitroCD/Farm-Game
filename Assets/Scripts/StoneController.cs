@@ -4,23 +4,26 @@ using UnityEngine;
 
 public class StoneController : MonoBehaviour
 {
+    //private variables
     bool checkForInput = false;
-    float mineCooldown = 1f;
+    float mineCooldown;
     float timeSinceMined;
     bool isActive = true;
     int timesHit = 0;
     int requiredHits;
     int stoneIncrement;
+    StoneType thisStoneType;
+
+    //public variables
     public GameObject stoneEffectsPrefab;
     public GameObject[] stoneTypes;
-    StoneType thisStoneType;
     public Collider2D[] stoneColliderArray;
 
     private void Start()
     {
         // Turn off the stone,
         Activate(false);
-        // Randomize the type of stone if it isnt set
+        // Randomize the type of stone,
         randomizeStoneType();
         // Turn back on the stone.
         Activate(true);
@@ -28,18 +31,23 @@ public class StoneController : MonoBehaviour
 
     private void Update()
     {
-        if (checkForInput)
-        {
-            if (PlayerController.currentHBSlot == 4 && PlayerController.currentHotbar == Hotbar.Tool && PlayerController.pickaxeUnlocked && Input.GetKeyDown(KeyCode.E))
-            {
-                Mine();
-            }
-        }
+        //activate the stone if its time
         if (!isActive)
         {
             if (Time.time - timeSinceMined >= mineCooldown)
             {
                 Activate(true);
+            }
+        }
+        //if its active, check if the player can mine
+        else
+        {
+            if (checkForInput)
+            {
+                if (PlayerController.currentHBSlot == 4 && PlayerController.currentHotbar == Hotbar.Tool && PlayerController.pickaxeUnlocked && Input.GetKeyDown(KeyCode.E))
+                {
+                    Mine();
+                }
             }
         }
     }
@@ -92,7 +100,7 @@ public class StoneController : MonoBehaviour
                     timesHit = 0;
                     Instantiate(stoneEffectsPrefab, gameObject.GetComponentInParent<Transform>());
                     timeSinceMined = Time.time;
-                    mineCooldown = Random.Range(40, 61);
+                    mineCooldown = Random.Range(90, 121);
                     PlayerController.playerStoneCount = PlayerController.playerStoneCount + stoneIncrement;
                     Activate(false);
                     randomizeStoneType();
