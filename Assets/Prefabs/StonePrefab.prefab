@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7967681102517728100}
   - component: {fileID: 1333581182285201629}
+  - component: {fileID: 689096318158382820}
   m_Layer: 0
   m_Name: StonePrefab
   m_TagString: Untagged
@@ -52,6 +53,22 @@ MonoBehaviour:
   stoneColliderArray:
   - {fileID: 5388419091840586291}
   - {fileID: 7377731992903159238}
+--- !u!70 &689096318158382820
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808375612536849287}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.05}
+  m_Size: {x: 0.4, y: 0.25}
+  m_Direction: 1
 --- !u!1 &2031542273491187993
 GameObject:
   m_ObjectHideFlags: 0

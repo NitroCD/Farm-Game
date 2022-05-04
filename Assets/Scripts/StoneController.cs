@@ -28,31 +28,26 @@ public class StoneController : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("update");
         if (checkForInput)
         {
-            Debug.Log("checkforinput");
-            if (PlayerController.currentHBSlot == 3 && PlayerController.currentHotbar == Hotbar.Tool && PlayerController.pickaxeUnlocked && Input.GetKeyDown(KeyCode.E))
+            if (PlayerController.currentHBSlot == 5 && PlayerController.currentHotbar == Hotbar.Tool && PlayerController.pickaxeUnlocked && Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("mining");
                 Mine();
             }
         }
         if (!isActive)
         {
-            Debug.Log("!isActive");
             if (Time.time - timeSinceMined >= mineCooldown)
             {
-                Debug.Log("activating");
                 Activate(true);
             }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    { checkForInput = true; Debug.Log("collisionenter"); }
+    { checkForInput = true; }
     private void OnTriggerExit2D(Collider2D collision)
-    { checkForInput = false; Debug.Log("collisionexit"); }
+    { checkForInput = false; }
 
     void Mine()
     {

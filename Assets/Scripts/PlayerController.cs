@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour
     public Text[] seedsText;
     public Text waterText;
     public Text woodText;
+    public Text stoneText;
     public Text landText;
     public Text pathText;
     public GameObject woodUI;
@@ -292,6 +293,7 @@ public class PlayerController : MonoBehaviour
         seedsText[1].text = seeds[1].ToString();
         seedsText[2].text = seeds[2].ToString();
         woodText.text = playerWoodCount.ToString();
+        stoneText.text = playerStoneCount.ToString();
         waterText.text = playerWaterCount.ToString();
         landText.text = playerLandCount.ToString();
         pathText.text = playerPathCount.ToString();

@@ -6399,6 +6399,7 @@ MonoBehaviour:
   - {fileID: 142166200}
   waterText: {fileID: 1355690900}
   woodText: {fileID: 1140969549}
+  stoneText: {fileID: 1733705426}
   landText: {fileID: 79252438}
   pathText: {fileID: 659811188}
   woodUI: {fileID: 155384935}
