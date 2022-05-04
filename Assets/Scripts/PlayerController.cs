@@ -339,7 +339,6 @@ public class PlayerController : MonoBehaviour
             playerPickaxe.SetActive(true);
             stoneUI.SetActive(true);
         }
-        Debug.Log("this is running");
     }
 
     public void ActivateWateringCan(bool canLoading)
@@ -501,7 +500,6 @@ public class PlayerController : MonoBehaviour
     
     void ChangeBuildPreview()
     {
-        Debug.Log("ChangeBuildPreview called");
         //get rid of the old preview
         Destroy(currentPreview);
 
@@ -555,7 +553,6 @@ public class PlayerController : MonoBehaviour
                 waterCanImage.sprite = wateringCanSprite[2];
             }
         }
-        Debug.Log(playerWaterCount);
     }
 
     //flashes the green indicator to show the player what they are currently holding

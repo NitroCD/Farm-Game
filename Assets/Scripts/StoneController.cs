@@ -30,7 +30,7 @@ public class StoneController : MonoBehaviour
     {
         if (checkForInput)
         {
-            if (PlayerController.currentHBSlot == 5 && PlayerController.currentHotbar == Hotbar.Tool && PlayerController.pickaxeUnlocked && Input.GetKeyDown(KeyCode.E))
+            if (PlayerController.currentHBSlot == 4 && PlayerController.currentHotbar == Hotbar.Tool && PlayerController.pickaxeUnlocked && Input.GetKeyDown(KeyCode.E))
             {
                 Mine();
             }
