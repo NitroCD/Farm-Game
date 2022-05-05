@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
                     float randomFloatX = Random.Range(-randomRange, randomRange);
                     float randomFloatY = Random.Range(-randomRange, randomRange);
                     GameObject newStone = Instantiate(stonePrefab, stoneSpawnParent.transform);
-                    Vector3 position = new Vector3(x+randomFloatX, y+randomFloatY + 35, 0);
+                    Vector3 position = new Vector3(x+randomFloatX, y+randomFloatY - 25, 0);
                     newStone.transform.position = position;
                     canSpawn = false;
                 }
@@ -129,7 +129,7 @@ public class GameManager : MonoBehaviour
                     float randomFloatX = Random.Range(-randomRange, randomRange);
                     float randomFloatY = Random.Range(-randomRange, randomRange);
                     GameObject newTree = Instantiate(treePrefab, treeSpawnParent.transform);
-                    Vector3 position = new Vector3(x + randomFloatX, y + randomFloatY - 25, 0);
+                    Vector3 position = new Vector3(x + randomFloatX, y + randomFloatY + 35, 0);
                     newTree.transform.position = position;
                     //canSpawn = false;
                 }
