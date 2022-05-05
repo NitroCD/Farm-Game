@@ -68,6 +68,25 @@ public class SellItems : MonoBehaviour
     public void SellStone()
     {
         PlayerController.playerMoney += PlayerController.playerStoneCount * otherSellPrice[1];
-        PlayerController.playerWoodCount = 0;
+        PlayerController.playerStoneCount = 0;
+    }
+
+    public void SellOres()
+    {
+        //iron
+        PlayerController.playerMoney += PlayerController.playerIronCount * otherSellPrice[2];
+        PlayerController.playerIronCount = 0;
+        //coal
+        PlayerController.playerMoney += PlayerController.playerCoalCount * otherSellPrice[3];
+        PlayerController.playerCoalCount = 0;
+        //gold
+        PlayerController.playerMoney += PlayerController.playerGoldCount * otherSellPrice[4];
+        PlayerController.playerGoldCount = 0;
+        //copper
+        PlayerController.playerMoney += PlayerController.playerCopperCount * otherSellPrice[5];
+        PlayerController.playerCopperCount = 0;
+        //sapphire
+        PlayerController.playerMoney += PlayerController.playerSapphireCount * otherSellPrice[6];
+        PlayerController.playerSapphireCount = 0;
     }
 }

@@ -16,6 +16,11 @@ public class PlayerController : MonoBehaviour
     public static bool wateringCanUnlocked = false;
     public static int playerWoodCount = 0;
     public static int playerStoneCount = 0;
+    public static int playerIronCount = 0;
+    public static int playerCoalCount = 0;
+    public static int playerGoldCount = 0;
+    public static int playerCopperCount = 0;
+    public static int playerSapphireCount = 0;
     public static bool axeUnlocked = false;
     public static bool pickaxeUnlocked = false;
     Animator playerAnimator;
@@ -69,7 +74,6 @@ public class PlayerController : MonoBehaviour
     public GameObject previewHB;
     Quaternion previewRotation;
     int previewType = 0;
-
     public GameObject[] toolHBPrefabs;
     public GameObject[] buildHBPrefabs;
     public GameObject[] hotbarGOs;
@@ -100,7 +104,6 @@ public class PlayerController : MonoBehaviour
     bool zoomedOut = false;
     public static int dirtPathSelection = 0;
     public static int currentRotation = 0;
-    //bool zoomedIn = true;
     bool readyToZoomIn = false;
     bool canOpenBuildMenu = true;
 
