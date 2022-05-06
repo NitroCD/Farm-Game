@@ -17,7 +17,6 @@ public class TreeEffectController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //change this to disable the animation, then destory it later
         if (Time.time > destructionTime + instantiatedTime)
         {
             Destroy(gameObject);

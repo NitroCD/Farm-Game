@@ -67,26 +67,26 @@ public class SellItems : MonoBehaviour
     }
     public void SellStone()
     {
-        PlayerController.playerMoney += PlayerController.playerStoneCount * otherSellPrice[1];
-        PlayerController.playerStoneCount = 0;
+        PlayerController.playerMoney += PlayerController.playerOreCount[0] * otherSellPrice[1];
+        PlayerController.playerOreCount[0] = 0;
     }
 
     public void SellOres()
     {
         //iron
-        PlayerController.playerMoney += PlayerController.playerIronCount * otherSellPrice[2];
-        PlayerController.playerIronCount = 0;
+        PlayerController.playerMoney += PlayerController.playerOreCount[1] * otherSellPrice[2];
+        PlayerController.playerOreCount[1] = 0;
         //coal
-        PlayerController.playerMoney += PlayerController.playerCoalCount * otherSellPrice[3];
-        PlayerController.playerCoalCount = 0;
+        PlayerController.playerMoney += PlayerController.playerOreCount[2] * otherSellPrice[3];
+        PlayerController.playerOreCount[2] = 0;
         //gold
-        PlayerController.playerMoney += PlayerController.playerGoldCount * otherSellPrice[4];
-        PlayerController.playerGoldCount = 0;
+        PlayerController.playerMoney += PlayerController.playerOreCount[3] * otherSellPrice[4];
+        PlayerController.playerOreCount[3] = 0;
         //copper
-        PlayerController.playerMoney += PlayerController.playerCopperCount * otherSellPrice[5];
-        PlayerController.playerCopperCount = 0;
+        PlayerController.playerMoney += PlayerController.playerOreCount[4] * otherSellPrice[5];
+        PlayerController.playerOreCount[4] = 0;
         //sapphire
-        PlayerController.playerMoney += PlayerController.playerSapphireCount * otherSellPrice[6];
-        PlayerController.playerSapphireCount = 0;
+        PlayerController.playerMoney += PlayerController.playerOreCount[5] * otherSellPrice[6];
+        PlayerController.playerOreCount[5] = 0;
     }
 }

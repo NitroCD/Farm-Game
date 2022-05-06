@@ -11,7 +11,8 @@ public class StoneController : MonoBehaviour
     bool isActive = true;
     int timesHit = 0;
     int requiredHits;
-    int stoneIncrement;
+    int[] increments;
+    int thisOre;
     StoneType thisStoneType;
 
     //public variables
@@ -46,7 +47,7 @@ public class StoneController : MonoBehaviour
             {
                 if (PlayerController.currentHBSlot == 4 && PlayerController.currentHotbar == Hotbar.Tool && PlayerController.pickaxeUnlocked && Input.GetKeyDown(KeyCode.E))
                 {
-                    Mine();
+                    MineController();
                 }
             }
         }
@@ -57,96 +58,84 @@ public class StoneController : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     { checkForInput = false; }
 
-    void Mine()
+    void MineController()
     {
         switch (thisStoneType)
         {
-            case StoneType.stoneOne:
-            ///change these ints for different stone types
-                requiredHits = 1; //input 1 for the stone to be broken in 1 hit, 2 for 2 hits, etc.
-                stoneIncrement = 1; //amount of stone given when the stone is broken
-
-                if (timesHit < requiredHits - 1)
-                {
-                    timesHit++;
-                    Instantiate(stoneEffectsPrefab, gameObject.GetComponentInParent<Transform>());
-                }
-                // On the third hit (0,1,2), "destroy" the object
-                else if (timesHit == requiredHits - 1)
-                {
-                    timesHit = 0;
-                    Instantiate(stoneEffectsPrefab, gameObject.GetComponentInParent<Transform>());
-                    timeSinceMined = Time.time;
-                    mineCooldown = Random.Range(90, 121);
-                    PlayerController.playerStoneCount = PlayerController.playerStoneCount + stoneIncrement;
-                    Activate(false);
-                    randomizeStoneType();
-                }
+            case StoneType.stoneOne: 
+                thisOre = (int)StoneType.stoneOne;
+                requiredHits = 1;
+                increments[thisOre] = 1;
+                Mine(thisOre, requiredHits);
                 break;
             case StoneType.iron:
-            ///change these ints for different stone types
-                requiredHits = 3; //input 1 for the stone to be broken in 1 hit, 2 for 2 hits, etc.
-                stoneIncrement = 2; //amount of stone given when the stone is broken
-
-                // increments the hit count and spawns particles
-                if (timesHit < requiredHits - 1 && isActive)
-                {
-                    timesHit++;
-                    Instantiate(stoneEffectsPrefab, gameObject.GetComponentInParent<Transform>());
-                }
-                // On the fifth hit (0,1,2,3,4), destroy the object
-                else if (timesHit == requiredHits - 1 && isActive)
-                {
-                    timesHit = 0;
-                    Instantiate(stoneEffectsPrefab, gameObject.GetComponentInParent<Transform>());
-                    timeSinceMined = Time.time;
-                    mineCooldown = Random.Range(90, 121);
-                    PlayerController.playerStoneCount = PlayerController.playerStoneCount + stoneIncrement;
-                    Activate(false);
-                    randomizeStoneType();
-                }
+                thisOre = (int)StoneType.iron;
+                requiredHits = 2;
+                increments[thisOre] = 1;
+                Mine(thisOre, requiredHits);
                 break;
+            case StoneType.coal:
+                thisOre = (int)StoneType.coal;
+                requiredHits = 2;
+                increments[thisOre] = 1; 
+                Mine(thisOre, requiredHits);
+                break;
+            case StoneType.gold:
+                thisOre = (int)StoneType.gold;
+                requiredHits = 3;
+                increments[thisOre] = 1;
+                Mine(thisOre, requiredHits);
+                break;
+            case StoneType.copper:
+                thisOre = (int)StoneType.copper;
+                requiredHits = 2;
+                increments[thisOre] = 1;
+                Mine(thisOre, requiredHits);
+                break;
+            case StoneType.sapphire:
+                thisOre = (int)StoneType.sapphire;
+                requiredHits = 5;
+                increments[thisOre] = 1;
+                Mine(thisOre, requiredHits);
+                break;
+                ///when adding new ores:
+                // 1. make sure the StoneType.(stonetype) in the case matches thisOre
+                // 2. change the required hits, input 1 for the stone to be broken in 1 hit, 2 for 2 hits, etc.
+                // 3. change the increments int to the amount of ore given when the stone is broken
+        }
+    }
+
+    void Mine(int Ore, int Hits)
+    {
+        if (timesHit < Hits - 1)
+        {
+            timesHit++;
+            Instantiate(stoneEffectsPrefab, gameObject.GetComponentInParent<Transform>());
+        }
+        else if (timesHit == Hits - 1)
+        {
+            timesHit = 0;
+            Instantiate(stoneEffectsPrefab, gameObject.GetComponentInParent<Transform>());
+            timeSinceMined = Time.time;
+            mineCooldown = Random.Range(90, 121);
+            PlayerController.playerOreCount[Ore] = PlayerController.playerOreCount[Ore] + increments[Ore];
+            Activate(false);
+            randomizeStoneType();
         }
     }
 
     void Activate(bool recievedBool)
     {
         isActive = recievedBool;
-        switch (thisStoneType)
-        {
-            case StoneType.stoneOne:
-                if (isActive)
-                {
-                    stoneTypes[0].SetActive(isActive);
-                    stoneTypes[1].SetActive(!isActive);
-                    stoneColliderArray[0].enabled = true;
-                    stoneColliderArray[1].enabled = false;
-                }
-                else if (!isActive)
-                {
-                    stoneTypes[0].SetActive(isActive);
-                    stoneTypes[1].SetActive(isActive);
-                    stoneColliderArray[0].enabled = false;
-                    stoneColliderArray[1].enabled = false;
-                }
-                break;
-            case StoneType.iron:
-                if (isActive)
-                {
-                    stoneTypes[0].SetActive(!isActive);
-                    stoneTypes[1].SetActive(isActive);
-                    stoneColliderArray[0].enabled = false;
-                    stoneColliderArray[1].enabled = true;
-                }
-                else if (!isActive)
-                {                
-                    stoneTypes[0].SetActive(isActive);
-                    stoneTypes[1].SetActive(isActive);
-                    stoneColliderArray[0].enabled = false;
-                    stoneColliderArray[1].enabled = false;
-                }
-                break;
-        }
+        int stone = (int)thisStoneType;
+
+        //turn off all of the stones, turn on the current type of stone
+        for (int i = 0; i < stoneTypes.Length; i++)
+        { stoneTypes[i].SetActive(false); }
+        stoneTypes[stone].SetActive(true);
+        for (int i = 0; i < stoneColliderArray.Length; i++)
+        { stoneColliderArray[i].enabled = false; }
+        stoneColliderArray[stone].enabled = true;
     }
 
     private void randomizeStoneType()
@@ -154,13 +143,24 @@ public class StoneController : MonoBehaviour
         int randomStone = Random.Range(0, 100);
         switch (randomStone)
         {
-            // 80% of the time it will be a normal stone
-            case var n when n < 80:
+            //when adding new stones, the percent that it will spawn = (n value - previous n value)
+            case var n when n < 75:
                 thisStoneType = StoneType.stoneOne;    
                 break;
-            // 20% of the time it will be an iron
-            case var n when n < 100:
+            case var n when n < 85:
                 thisStoneType = StoneType.iron;
+                break;
+            case var n when n < 90:
+                thisStoneType = StoneType.coal;
+                break;
+            case var n when n < 94:
+                thisStoneType = StoneType.gold;
+                break;
+            case var n when n < 99:
+                thisStoneType = StoneType.copper;
+                break;
+            case var n when n < 100:
+                thisStoneType = StoneType.sapphire;
                 break;
         }
     }
@@ -170,15 +170,14 @@ public enum StoneType
 {
     stoneOne = 0,
     iron,
-
-
-    /*
-    stoneTwo,
     coal,
     gold,
     copper,
+    sapphire,
+
+    /*
+    stoneTwo,
     silver,
-    sapphire, 
     ruby,
     emerald,
     */
@@ -220,6 +219,10 @@ public enum StoneType
     vortexFragment,
     stardustFragment,
     luminite,
+    ruby,
+    amethyst,
+    sapphire,
+    topaz,
     */
 
     /*//periodic table of the elements

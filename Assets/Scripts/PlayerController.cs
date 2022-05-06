@@ -7,20 +7,21 @@ public class PlayerController : MonoBehaviour
 {
     //player
     public Rigidbody2D playerRB;
-    public static float playerMoney = 0f;
+    public static float playerMoney;
     public static int[] seeds = new int[3];
     public static int seedSelection = 0;
     public static int[] crops = new int[3];
     public static int playerWaterCount = 0;
     int waterCountComparable = 0;
     public static bool wateringCanUnlocked = false;
-    public static int playerWoodCount = 0;
-    public static int playerStoneCount = 0;
-    public static int playerIronCount = 0;
-    public static int playerCoalCount = 0;
-    public static int playerGoldCount = 0;
-    public static int playerCopperCount = 0;
-    public static int playerSapphireCount = 0;
+    public static int playerWoodCount;
+    public static int[] playerOreCount = new int[6];
+    //public static int playerStoneCount = 0;
+    //public static int playerIronCount = 0;
+    //public static int playerCoalCount = 0;
+    //public static int playerGoldCount = 0;
+    //public static int playerCopperCount = 0;
+    //public static int playerSapphireCount = 0;
     public static bool axeUnlocked = false;
     public static bool pickaxeUnlocked = false;
     Animator playerAnimator;
@@ -111,18 +112,19 @@ public class PlayerController : MonoBehaviour
     {
         //Setting variables for the start of the game
         SetItemText("Harvesting Scythe");
-        playerMoney = 250f;
-        
+        playerMoney = 250f;        
         seeds[0] = 0;
         seeds[1] = 0;
         seeds[2] = 0;
-
         crops[0] = 0;
         crops[1] = 0;
         crops[2] = 0;
-
+        playerWoodCount = 0;
+        for (int i = 0; i < playerOreCount.Length; i++)
+        { playerOreCount[i] = 0; }
         waterCountComparable = playerWaterCount;
 
+        //reset the tools
         playerWateringCan.SetActive(false);
         playerAxe.SetActive(false);
         playerPickaxe.SetActive(false);
@@ -131,11 +133,7 @@ public class PlayerController : MonoBehaviour
         playerAnimator = gameObject.GetComponentInChildren<Animator>();
         playerAnimator.enabled = false;
 
-        /*
-         * spawn all the hotbar items
-         * re-set the hotbar items
-         * 
-         */
+        //spawn all the hotbar items, reset the hotbar items
         hotbarSelectionArray[currentHBSlot].SetActive(true);
         previewHB.SetActive(false);
         dirtPathHotbar.SetActive(false);
@@ -245,7 +243,7 @@ public class PlayerController : MonoBehaviour
         crops[2] = playerLoadedCrops[2];
 
         playerWoodCount = playerLoadedWood;
-        playerStoneCount = playerLoadedStone;
+        playerOreCount[0] = playerLoadedStone;
     }
 
     void Movement()
@@ -296,7 +294,7 @@ public class PlayerController : MonoBehaviour
         seedsText[1].text = seeds[1].ToString();
         seedsText[2].text = seeds[2].ToString();
         woodText.text = playerWoodCount.ToString();
-        stoneText.text = playerStoneCount.ToString();
+        stoneText.text = playerOreCount[0].ToString();
         waterText.text = playerWaterCount.ToString();
         landText.text = playerLandCount.ToString();
         pathText.text = playerPathCount.ToString();
