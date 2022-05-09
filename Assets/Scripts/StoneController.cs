@@ -11,7 +11,7 @@ public class StoneController : MonoBehaviour
     bool isActive = true;
     int timesHit = 0;
     int requiredHits;
-    int[] increments;
+    int[] increments = new int[6];
     int thisOre;
     StoneType thisStoneType;
 
