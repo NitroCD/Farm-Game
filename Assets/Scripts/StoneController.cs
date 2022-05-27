@@ -105,20 +105,20 @@ public class StoneController : MonoBehaviour
         }
     }
 
-    void Mine(int Ore, int Hits)
+    void Mine(int ore, int hits)
     {
-        if (timesHit < Hits - 1)
+        if (timesHit < hits - 1)
         {
             timesHit++;
             Instantiate(stoneEffectsPrefab, gameObject.GetComponentInParent<Transform>());
         }
-        else if (timesHit == Hits - 1)
+        else if (timesHit == hits - 1)
         {
             timesHit = 0;
             Instantiate(stoneEffectsPrefab, gameObject.GetComponentInParent<Transform>());
             timeSinceMined = Time.time;
             mineCooldown = Random.Range(90, 121);
-            PlayerController.playerOreCount[Ore] = PlayerController.playerOreCount[Ore] + increments[Ore];
+            PlayerController.playerOreCount[ore] = PlayerController.playerOreCount[ore] + increments[ore];
             Activate(false);
             randomizeStoneType();
         }

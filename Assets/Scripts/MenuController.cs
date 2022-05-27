@@ -4,60 +4,91 @@ using UnityEngine;
 
 public class MenuController : MonoBehaviour
 {
-    GameObject[] menuObjects;
-    int xIncrement;
+    public Transform[] menuTransforms;
+    Vector2[] initialPositions;
+    Vector2 zeroPosition;
+    bool open = false;
+    bool move = false;
+    bool positionsSnapped = false;
     float timeLerped = 0f;
-    float lerpduration = 0.5f;
+    float lerpDuration = 5f;
 
-    // Start is called before the first frame update
     void Start()
     {
-        menuObjects = GetComponentsInChildren<GameObject>();
-        xIncrement = 30;
-    }
+        //get the origin position
+        zeroPosition = GetComponentInParent<Transform>().position;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    void OpenMenu()
-    {
-        for (int i = 0; i < menuObjects.Length; i++)
+        //save all the initial positions of the objects
+        initialPositions = new Vector2[menuTransforms.Length];
+        for (int i = 0; i < menuTransforms.Length; i++)
         {
-            //smoothly move each UI element down
+            initialPositions[i] = menuTransforms[i].position;
+        }
+
+        SnapPositions();
+    }
+
+    public void toggleOpen()
+    {
+        //SnapPositions();
+        if (timeLerped != 5f && timeLerped != 0f)
+        {
+            timeLerped = lerpDuration - timeLerped;
+        }
+        open = !open;
+        move = true;
+    }
+
+    private void Update()
+    {
+        if (move)
+        {
+            SmoothMovement();
+        }
+        else if (!positionsSnapped)
+        {
+            SnapPositions();
         }
     }
 
-    void CloseMenu()
+    void SmoothMovement()
     {
-        for (int i = 0; i < menuObjects.Length; i++)
+        for (int i = 0; i < menuTransforms.Length; i++)
         {
-            //smoothly move each UI element up
+            if (timeLerped <= lerpDuration)
+            {
+                if (open)
+                {
+                    menuTransforms[i].position = Vector3.Lerp(zeroPosition, initialPositions[i], timeLerped / lerpDuration);
+                }
+                else if (!open)
+                {
+                    menuTransforms[i].position = Vector3.Lerp(initialPositions[i], zeroPosition, timeLerped / lerpDuration);
+                }
+                timeLerped += Time.deltaTime;
+            }
+        }
+        if (timeLerped > lerpDuration)
+        {
+            move = false;
+            SnapPositions();
+            timeLerped = 0f;
+        }
+    }
+
+    void SnapPositions()
+    {
+        positionsSnapped = true;
+        for (int i = 0; i < menuTransforms.Length; i++)
+        {
+            if (open)
+            {
+                menuTransforms[i].transform.position = initialPositions[i];
+            }
+            else if (!open)
+            {
+                menuTransforms[i].transform.position = zeroPosition;
+            }
         }
     }
 }
-/*
-        if (timeLerped <= lerpDuration)
-        {
-            Vector3 smoothPosition = Vector3.Lerp(transform.position, plotCameraPosition.position, timeLerped / lerpDuration);
-            mainCameraGO.transform.position = smoothPosition + new Vector3(0f, 0f, -1f);
-
-            float smoothFloat = Mathf.Lerp(defaultCameraZoom, maxCameraZoom, timeLerped / lerpDuration);
-            mainCameraGO.GetComponent<Camera>().orthographicSize = smoothFloat;
-
-            timeLerped += Time.deltaTime;
-        }
-        else if (timeLerped > lerpDuration)
-        {
-            mainCameraGO.transform.position = plotCameraPosition.position;
-
-            mainCameraGO.GetComponent<Camera>().orthographicSize = maxCameraZoom;
-
-            timeLerped = 0f;
-
-            zoomedOut = true;
-            //zoomedIn = false;
-        }
-*/

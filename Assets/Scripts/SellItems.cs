@@ -9,10 +9,6 @@ public class SellItems : MonoBehaviour
     public int[] cropSellPrice;
     public int[] otherSellPrice;
     bool openedUI = false;
-    private void Start()
-    {
-        OpenUI();
-    }
 
     // Checks for player input while they stand on the tile
     void Update()
@@ -29,20 +25,15 @@ public class SellItems : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape))
             { CloseUI(); }
         }
-        else
+        else if (!checkForInput)
         { CloseUI(); }
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
-    {
-        checkForInput = true;
-    }
+    { checkForInput = true; }
 
     public void OnTriggerExit2D(Collider2D collision)
-    {
-        checkForInput = false;
-        sellUI.SetActive(false);
-    }
+    { checkForInput = false; }
 
     public void OpenUI()
     {
@@ -73,20 +64,11 @@ public class SellItems : MonoBehaviour
 
     public void SellOres()
     {
-        //iron
-        PlayerController.playerMoney += PlayerController.playerOreCount[1] * otherSellPrice[2];
-        PlayerController.playerOreCount[1] = 0;
-        //coal
-        PlayerController.playerMoney += PlayerController.playerOreCount[2] * otherSellPrice[3];
-        PlayerController.playerOreCount[2] = 0;
-        //gold
-        PlayerController.playerMoney += PlayerController.playerOreCount[3] * otherSellPrice[4];
-        PlayerController.playerOreCount[3] = 0;
-        //copper
-        PlayerController.playerMoney += PlayerController.playerOreCount[4] * otherSellPrice[5];
-        PlayerController.playerOreCount[4] = 0;
-        //sapphire
-        PlayerController.playerMoney += PlayerController.playerOreCount[5] * otherSellPrice[6];
-        PlayerController.playerOreCount[5] = 0;
+        //starts at 1 to ignore selling stone
+        for (int i = 1; i < PlayerController.playerOreCount.Length; i++)
+        {
+            PlayerController.playerMoney += PlayerController.playerOreCount[i] * otherSellPrice[i + 1];
+            PlayerController.playerOreCount[i] = 0;
+        }
     }
 }

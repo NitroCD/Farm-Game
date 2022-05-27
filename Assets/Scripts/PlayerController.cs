@@ -16,12 +16,6 @@ public class PlayerController : MonoBehaviour
     public static bool wateringCanUnlocked = false;
     public static int playerWoodCount;
     public static int[] playerOreCount = new int[6];
-    //public static int playerStoneCount = 0;
-    //public static int playerIronCount = 0;
-    //public static int playerCoalCount = 0;
-    //public static int playerGoldCount = 0;
-    //public static int playerCopperCount = 0;
-    //public static int playerSapphireCount = 0;
     public static bool axeUnlocked = false;
     public static bool pickaxeUnlocked = false;
     Animator playerAnimator;
@@ -54,7 +48,7 @@ public class PlayerController : MonoBehaviour
     public Text[] seedsText;
     public Text waterText;
     public Text woodText;
-    public Text stoneText;
+    public Text[] stonesText;
     public Text landText;
     public Text pathText;
     public GameObject woodUI;
@@ -287,14 +281,13 @@ public class PlayerController : MonoBehaviour
     {
         //Update the money, seeds, and wheat count
         moneyText.text = playerMoney.ToString();
-        cropText[0].text = crops[0].ToString();
-        cropText[1].text = crops[1].ToString();
-        cropText[2].text = crops[2].ToString();
-        seedsText[0].text = seeds[0].ToString();
-        seedsText[1].text = seeds[1].ToString();
-        seedsText[2].text = seeds[2].ToString();
+        for (int i = 0; i < cropText.Length; i++)
+        { cropText[i].text = crops[i].ToString(); }
+        for (int i = 0; i < seedsText.Length; i++)
+        { seedsText[i].text = seeds[i].ToString(); }
         woodText.text = playerWoodCount.ToString();
-        stoneText.text = playerOreCount[0].ToString();
+        for (int i = 0; i < stonesText.Length; i++)
+        { stonesText[i].text = playerOreCount[i].ToString(); }
         waterText.text = playerWaterCount.ToString();
         landText.text = playerLandCount.ToString();
         pathText.text = playerPathCount.ToString();
@@ -540,7 +533,6 @@ public class PlayerController : MonoBehaviour
     {
         if (wateringCanUnlocked)
         {
-
             if (playerWaterCount < 1)
             {
                 waterCanImage.sprite = wateringCanSprite[0];
