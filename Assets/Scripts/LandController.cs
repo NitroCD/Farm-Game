@@ -158,7 +158,7 @@ public class LandController : MonoBehaviour
     public void DeleteTile(GameObject parent)
     {
         Debug.Log("boo");
-        parentScript.DeletedTile(0);
+        parentScript.DeletedTile(parent, 0);
 
         Destroy(parent);
     }

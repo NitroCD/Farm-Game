@@ -38,7 +38,7 @@ public class PathController : MonoBehaviour
     public void DeleteTile(GameObject parent)
     {
         Debug.Log("boo");
-        parentScript.DeletedTile(1);
+        parentScript.DeletedTile(parent, 1);
 
         Destroy(parent);
     }
