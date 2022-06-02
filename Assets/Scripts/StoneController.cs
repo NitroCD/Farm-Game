@@ -118,7 +118,7 @@ public class StoneController : MonoBehaviour
             Instantiate(stoneEffectsPrefab, gameObject.GetComponentInParent<Transform>());
             timeSinceMined = Time.time;
             mineCooldown = Random.Range(90, 121);
-            PlayerController.playerOreCount[ore] = PlayerController.playerOreCount[ore] + increments[ore];
+            PlayerController.playerOreCount[ore] += increments[ore];
             Activate(false);
             randomizeStoneType();
         }
@@ -129,13 +129,10 @@ public class StoneController : MonoBehaviour
         isActive = recievedBool;
         int stone = (int)thisStoneType;
 
-        //turn off all of the stones, turn on the current type of stone
+        // these arrays must be the same length
         for (int i = 0; i < stoneTypes.Length; i++)
         {
             stoneTypes[i].SetActive(false);
-        }
-        for (int i = 0; i < stoneColliderArray.Length; i++)
-        {
             stoneColliderArray[i].enabled = false;
         }
         if (isActive)
@@ -182,7 +179,7 @@ public enum StoneType
     copper,
     sapphire,
 
-    /*
+    /* //other stones
     stoneTwo,
     silver,
     ruby,
@@ -194,7 +191,7 @@ public enum StoneType
     iron,
     gold,
     redstone,
-    lapislazuli,
+    lapisLazuli,
     diamond,
     netherite,
     */
@@ -226,10 +223,13 @@ public enum StoneType
     vortexFragment,
     stardustFragment,
     luminite,
+    diamond,
+    amber,
     ruby,
-    amethyst,
+    emerald,
     sapphire,
     topaz,
+    amethyst,
     */
 
     /*//periodic table of the elements

@@ -47,7 +47,7 @@ public class TreeController : MonoBehaviour
             {
                 if (PlayerController.currentHBSlot == 3 && PlayerController.currentHotbar == Hotbar.Tool && PlayerController.axeUnlocked && Input.GetKeyDown(KeyCode.E))
                 {
-                    Harvest();
+                    HarvestController();
                 }
             }
         }
@@ -58,98 +58,65 @@ public class TreeController : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     { checkForInput = false; }
 
-    void Harvest()
+    void HarvestController()
     {
         switch (thisTreeType)
         {
             case TreeType.treeMedium:
-            ///change these ints for different tree types
                 requiredHits = 3; //input 1 for the tree to be broken in 1 hit, 2 for 2 hits, etc.
                 woodIncrement = 1; //amount of wood given when the tree is broken
-
-                // increments the hit count and spawns particles
-                if (timesHit < requiredHits - 1)
-                {
-                    timesHit++;
-                    Instantiate(treeEffectsPrefab, gameObject.GetComponentInParent<Transform>());
-                }
-                // On the third hit (0,1,2), destroy the object
-                else if (timesHit == requiredHits - 1)
-                {
-                    timesHit = 0;
-                    Instantiate(treeEffectsPrefab, gameObject.GetComponentInParent<Transform>());
-                    timeSinceHarvest = Time.time;
-                    harvestCooldown = Random.Range(40, 61);
-                    PlayerController.playerWoodCount = PlayerController.playerWoodCount + woodIncrement;
-                    Activate(false);
-                    randomizeTreeType();
-                }
+                Harvest(requiredHits, woodIncrement);
                 break;
             case TreeType.treeLarge:
-            ///change these ints for different tree types
                 requiredHits = 5; //input 1 for the tree to be broken in 1 hit, 2 for 2 hits, etc.
                 woodIncrement = 2; //amount of wood given when the tree is broken
-
-                // increments the hit count and spawns particles
-                if (timesHit < requiredHits - 1)
-                {
-                    timesHit++;
-                    Instantiate(treeEffectsPrefab, gameObject.GetComponentInParent<Transform>());
-                }
-                // On the fifth hit (0,1,2,3,4), destroy the object
-                else if (timesHit == requiredHits - 1)
-                {
-                    timesHit = 0;
-                    Instantiate(treeEffectsPrefab, gameObject.GetComponentInParent<Transform>());
-                    timeSinceHarvest = Time.time;
-                    harvestCooldown = Random.Range(40, 61);
-                    PlayerController.playerWoodCount = PlayerController.playerWoodCount + woodIncrement;
-                    Activate(false);
-                    randomizeTreeType();
-                }
+                Harvest(requiredHits, woodIncrement);
                 break;
+                ///when adding new trees:
+                // 1. change the required hits, input 1 for the tree to be broken in 1 hit, 2 for 2 hits, etc.
+                // 2. change the increments int to the amount of wood given when the tree is broken
+        }
+    }
+
+    void Harvest(int hits, int wood)
+    {
+        // increments the hit count and spawns particles
+        if (timesHit < hits - 1)
+        {
+            timesHit++;
+            Instantiate(treeEffectsPrefab, gameObject.GetComponentInParent<Transform>());
+        }
+        // On the nth hit (0,1,2... n), destroy the object
+        else if (timesHit == hits - 1)
+        {
+            timesHit = 0;
+            Instantiate(treeEffectsPrefab, gameObject.GetComponentInParent<Transform>());
+            timeSinceHarvest = Time.time;
+            harvestCooldown = Random.Range(40, 61);
+            PlayerController.playerWoodCount += wood;
+            Activate(false);
+            randomizeTreeType();
         }
     }
 
     void Activate(bool recievedBool)
     {
         isActive = recievedBool;
-        switch (thisTreeType)
+        int tree = (int)thisTreeType;
+
+        // these arrays must be the same length
+        for (int i = 0; i < treeTypes.Length; i++)
         {
-            case TreeType.treeMedium:
-                if (isActive)
-                {
-                    treeTypes[0].SetActive(isActive);
-                    treeTypes[1].SetActive(!isActive);
-                    treeColliderArray[0].enabled = true;
-                    treeColliderArray[1].enabled = false;
-                }
-                else if (!isActive)
-                {
-                    treeTypes[0].SetActive(isActive);
-                    treeTypes[1].SetActive(isActive);
-                    treeColliderArray[0].enabled = false;
-                    treeColliderArray[1].enabled = false;
-                }
-                break;
-            case TreeType.treeLarge:
-                if (isActive)
-                {
-                    treeTypes[0].SetActive(!isActive);
-                    treeTypes[1].SetActive(isActive);
-                    treeColliderArray[0].enabled = false;
-                    treeColliderArray[1].enabled = true;
-                }
-                else if (!isActive)
-                {
-                    treeTypes[0].SetActive(isActive);
-                    treeTypes[1].SetActive(isActive);
-                    treeColliderArray[0].enabled = false;
-                    treeColliderArray[1].enabled = false;
-                }
-                break;
+            treeTypes[i].SetActive(false);
+            treeColliderArray[i].enabled = false;
+        }
+        if (isActive)
+        {
+            treeTypes[tree].SetActive(true);
+            treeColliderArray[tree].enabled = false;
         }
     }
+
     private void randomizeTreeType()
     {
         int randomTree = Random.Range(0, 100);

@@ -4,6 +4,6 @@ public class HelpBoxController : MonoBehaviour
 {
     public void HelpBoxPressed()
     {
-        Destroy(gameObject);
+        Destroy(gameObject.GetComponentInParent<GameObject>());
     }
 }
