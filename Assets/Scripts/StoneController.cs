@@ -131,11 +131,18 @@ public class StoneController : MonoBehaviour
 
         //turn off all of the stones, turn on the current type of stone
         for (int i = 0; i < stoneTypes.Length; i++)
-        { stoneTypes[i].SetActive(false); }
-        stoneTypes[stone].SetActive(true);
+        {
+            stoneTypes[i].SetActive(false);
+        }
         for (int i = 0; i < stoneColliderArray.Length; i++)
-        { stoneColliderArray[i].enabled = false; }
-        stoneColliderArray[stone].enabled = true;
+        {
+            stoneColliderArray[i].enabled = false;
+        }
+        if (isActive)
+        {
+            stoneTypes[stone].SetActive(true);
+            stoneColliderArray[stone].enabled = true;
+        }
     }
 
     private void randomizeStoneType()
