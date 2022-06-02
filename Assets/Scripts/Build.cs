@@ -59,7 +59,7 @@ public class Build : MonoBehaviour
                 int xPos = (int)thisGO.transform.position.x + 11;
                 int yPos = (int)thisGO.transform.position.y;
                 int tileType = 0;
-                int rotationInt = PlayerController.currentRotation / 90;
+                int rotationInt = PlayerController.currentRotation;
 
                 tileStorageIndex = (xPos + (yPos - 1) * 21) - 1;
 
@@ -82,8 +82,8 @@ public class Build : MonoBehaviour
 
                 int xPos = (int)thisGO.transform.position.x + 11;
                 int yPos = (int)thisGO.transform.position.y;
-                int tileType = 0;
-                int rotationInt = PlayerController.currentRotation / 90;
+                int tileType = PlayerController.dirtPathSelection + 1;
+                int rotationInt = PlayerController.currentRotation;
 
                 tileStorageIndex = (xPos + (yPos - 1) * 21) - 1;
 
@@ -116,10 +116,10 @@ public class Build : MonoBehaviour
     public void DeletedTile(GameObject tile, int tileType)
     {
         UnsaveTile(tile.transform.position);
-        
 
-        if(tileType == 1)
+        if(tileType == 0)
         { PlayerController.playerLandCount++; }
+        else { PlayerController.playerPathCount++; }
         button.SetActive(false);
         isBuilt = false;
     }
