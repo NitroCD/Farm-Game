@@ -6,18 +6,6 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public class GameManager : MonoBehaviour
 {
-    //save data variables
-    public static float playerSaveCash;
-    public static int playerSaveLandCount;
-    public static int[] playerSaveSeedsCount = new int[3];
-    public static int[] playerSaveCropCount = new int[3];
-    public static int playerSaveWoodCount;
-    public static int wellStatusSave;
-    public static int waterCanStatusSave;
-    public static int axeStatusSave;
-    public static int pickaxeStatusSave;
-    public static int playerPlotSave;
-
     //Tree variables
     public GameObject treePrefab;
     public Transform[] treeSpawnAreas;
@@ -34,6 +22,8 @@ public class GameManager : MonoBehaviour
 
     //variables for saving
     public GameObject saveUI;
+    public Build buildScript;
+
     //move these two buttons below to the slotButtonArray (and make it just a buttonArray
     public GameObject saveButton;
     public GameObject loadButton;
@@ -171,6 +161,7 @@ public class GameManager : MonoBehaviour
         }
 
         // GameData saveData = new GameData("VARIABLE1", "VARIABLE2");
+        //GameData saveData = new GameData();
         BinaryFormatter formatter = new BinaryFormatter();
         formatter.Serialize(saveFile, saveDestination);
         saveFile.Close();
@@ -209,24 +200,30 @@ public class GameManager : MonoBehaviour
     //stores important save game information into local variables such as the player's cash
     void GetData()
     {
-        //assigns the purcase status of the well to an integer, 0 for unpurchased and 1 for purchased
-        if (WellController.isPurchased)
-        { wellStatusSave = 1; }
-        else
-        { wellStatusSave = 0; }
+        //money
+        //seeds
+        //crops
+        //wood
+        //stones
+        //path tiles
+        //farmland
+        //well status
+        //bucket status
+        //axe status
+        //picaxe status
 
-        //takes the value of some static bools and assigns them to variables used in the SaveGame function
-        //playerSaveLandCount = BuyLand.landCount;
-        //playerPlotSave = BuyLand.plotCount;
-        playerSaveCash = PlayerController.playerMoney;
-        Debug.Log(PlayerController.crops[0]);
-        playerSaveCropCount[0] = PlayerController.crops[0];
-        playerSaveCropCount[1] = PlayerController.crops[1];
-        playerSaveCropCount[2] = PlayerController.crops[2];
-
-        playerSaveSeedsCount[0] = PlayerController.seeds[0] + LandController.currentCropsPlanted[0];
-        playerSaveSeedsCount[1] = PlayerController.seeds[1] + LandController.currentCropsPlanted[1];
-        playerSaveSeedsCount[2] = PlayerController.seeds[2] + LandController.currentCropsPlanted[2];
+        int[] tileArray = buildScript.tileArray();
+        float playerCash = PlayerController.playerMoney;
+        int[] playerSeeds = PlayerController.seeds;
+        int[] playerCrops = PlayerController.crops;
+        int playerWood = PlayerController.playerWoodCount;
+        int[] playerOres = PlayerController.playerOreCount;
+        int playerPaths = PlayerController.playerPathCount;
+        int playerLand = PlayerController.playerLandCount;
+        bool wellStatus = WellController.isPurchased;
+        bool bucketStatus = PlayerController.wateringCanUnlocked;
+        bool axeStatus = PlayerController.axeUnlocked;
+        bool picaxeStatus = PlayerController.pickaxeUnlocked;
     }
 
     /*void OldSavingAndLoading()

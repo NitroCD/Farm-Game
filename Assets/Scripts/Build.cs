@@ -42,6 +42,11 @@ public class Build : MonoBehaviour
         }
     }
 
+    public int[] tileArray()
+    {
+        return tileStorage;
+    }
+
     public void BuildTile()
     {
         if(!isBuilt)
