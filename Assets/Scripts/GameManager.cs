@@ -42,6 +42,20 @@ public class GameManager : MonoBehaviour
     public GameObject tileButtonPrefab;
     public GameObject tileButtonParent;
 
+    //Saving variables
+    public int[] tileArray = new int[231];
+    public float playerCash;
+    public int[] playerSeeds;
+    public int[] playerCrops;
+    public int playerWood;
+    public int[] playerOres;
+    public int playerPaths;
+    public int playerLand;
+    public bool wellStatus;
+    public bool bucketStatus;
+    public bool axeStatus;
+    public bool pickaxeStatus;
+
     void Start()
     {
         SaveMenuCloser();
@@ -160,8 +174,8 @@ public class GameManager : MonoBehaviour
             saveFile = File.Create(saveDestination);
         }
 
-        // GameData saveData = new GameData("VARIABLE1", "VARIABLE2");
-        //GameData saveData = new GameData();
+        GetData();
+        GameData saveData = new GameData(tileArray, playerCash, playerSeeds, playerCrops, playerWood, playerOres, playerPaths, playerLand, wellStatus, bucketStatus, axeStatus, pickaxeStatus);
         BinaryFormatter formatter = new BinaryFormatter();
         formatter.Serialize(saveFile, saveDestination);
         saveFile.Close();
@@ -193,8 +207,37 @@ public class GameManager : MonoBehaviour
         }
 
         BinaryFormatter formatter = new BinaryFormatter();
-        // Gamedata saveData = (GameData)formatter.Deserialize(saveFile);
+        GameData saveData = (GameData)formatter.Deserialize(saveFile);
+        SetData(saveData);
         saveFile.Close();
+    }
+
+    void SetData(GameData saveData)
+    {
+        tileArray = saveData.tileArray;
+        PlayerController.playerMoney = saveData.money;
+        PlayerController.seeds = saveData.seeds;
+        PlayerController.crops = saveData.crops;
+        PlayerController.playerWoodCount = saveData.wood;
+        PlayerController.playerOreCount = saveData.ores;
+        PlayerController.playerPathCount = saveData.paths;
+        PlayerController.playerLandCount = saveData.land;
+        WellController.isPurchased = saveData.well;
+        PlayerController.wateringCanUnlocked = saveData.bucket;
+        PlayerController.axeUnlocked = saveData.axe;
+        PlayerController.pickaxeUnlocked = saveData.pickaxe;
+    }
+
+    void SetTiles()
+    {
+        for(int i = 0; i < tileArray.Length; i++)
+        {
+            int num = tileArray[i];
+            if(num != 0)
+            {
+
+            }
+        }
     }
 
     //stores important save game information into local variables such as the player's cash
@@ -212,19 +255,26 @@ public class GameManager : MonoBehaviour
         //axe status
         //picaxe status
 
-        int[] tileArray = buildScript.tileArray();
-        float playerCash = PlayerController.playerMoney;
-        int[] playerSeeds = PlayerController.seeds;
-        int[] playerCrops = PlayerController.crops;
-        int playerWood = PlayerController.playerWoodCount;
-        int[] playerOres = PlayerController.playerOreCount;
-        int playerPaths = PlayerController.playerPathCount;
-        int playerLand = PlayerController.playerLandCount;
-        bool wellStatus = WellController.isPurchased;
-        bool bucketStatus = PlayerController.wateringCanUnlocked;
-        bool axeStatus = PlayerController.axeUnlocked;
-        bool picaxeStatus = PlayerController.pickaxeUnlocked;
+
+        playerCash = PlayerController.playerMoney;
+        playerSeeds = PlayerController.seeds;
+        playerCrops = PlayerController.crops;
+        playerWood = PlayerController.playerWoodCount;
+        playerOres = PlayerController.playerOreCount;
+        playerPaths = PlayerController.playerPathCount;
+        playerLand = PlayerController.playerLandCount;
+        wellStatus = WellController.isPurchased;
+        bucketStatus = PlayerController.wateringCanUnlocked;
+        axeStatus = PlayerController.axeUnlocked;
+        pickaxeStatus = PlayerController.pickaxeUnlocked;
+}
+
+    public void updateTileArray(int index, int value)
+    {
+        tileArray[index] = value;
     }
+
+
 
     /*void OldSavingAndLoading()
     {

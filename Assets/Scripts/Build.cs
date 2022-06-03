@@ -10,9 +10,9 @@ public class Build : MonoBehaviour
     public GameObject[] tilePrefabs;
     public GameObject[] pathPrefabs;
     int[] tileStorage;
-    int tileStorageIndex;
     public GameObject button;
     GameObject thisGO;
+    GameManager gameManager;
 
     bool isBuilt = false;
 
@@ -66,15 +66,14 @@ public class Build : MonoBehaviour
                 int tileType = 0;
                 int rotationInt = PlayerController.currentRotation;
 
-                tileStorageIndex = (xPos + (yPos - 1) * 21) - 1;
+                int index = (xPos + (yPos - 1) * 21) - 1;
 
                 Vector2 pos = new Vector2(xPos, yPos);
 
-                Debug.Log(tileStorageIndex);
-                Debug.Log(tileStorage.Length);
-                tileStorage[tileStorageIndex] = SaveTile(pos, tileType, rotationInt);
+                int value = SaveTile(pos, tileType, rotationInt);
 
-                Debug.Log("Tile " + tileStorageIndex + " was set to " + tileStorage[tileStorageIndex]);
+                gameManager.updateTileArray(index, value);
+
             }
             else if (PlayerController.currentHBSlot == 1 && PlayerController.playerPathCount > 0)
             {
@@ -90,13 +89,13 @@ public class Build : MonoBehaviour
                 int tileType = PlayerController.dirtPathSelection + 1;
                 int rotationInt = PlayerController.currentRotation;
 
-                tileStorageIndex = (xPos + (yPos - 1) * 21) - 1;
+                int index = (xPos + (yPos - 1) * 21) - 1;
 
                 Vector2 pos = new Vector2(xPos, yPos);
 
-                tileStorage[tileStorageIndex] = SaveTile(pos, tileType, rotationInt);
+                int value = SaveTile(pos, tileType, rotationInt);
 
-                Debug.Log("Tile " + tileStorageIndex + " was set to " + tileStorage[tileStorageIndex]);
+                gameManager.updateTileArray(index, value);
             }
         }
     }
@@ -112,10 +111,8 @@ public class Build : MonoBehaviour
 
     public void UnsaveTile(Vector3 position)
     {
-        tileStorageIndex = ((int)position.x + 11 + ((int)position.y - 1) * 21) - 1;
-        Debug.Log(tileStorageIndex);
-        tileStorage[tileStorageIndex] = 0;
-        Debug.Log("Tile " + tileStorageIndex + " was set to " + tileStorage[tileStorageIndex]);
+        int index = ((int)position.x + 11 + ((int)position.y - 1) * 21) - 1;
+        gameManager.updateTileArray(index, 0);
     }
 
     public void DeletedTile(GameObject tile, int tileType)
