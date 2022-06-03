@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     float axePrice = 400f;
     float pickaxePrice = 5000f;
 
-    //UI
+    ///UI
     public GameObject inventoryUI;
     public Text moneyText;
     public Text[] cropText;
@@ -171,7 +171,7 @@ public class PlayerController : MonoBehaviour
         if (timeLerped <= lerpDuration)
         {
             Vector3 smoothPosition = Vector3.Lerp(transform.position + new Vector3(0f, 0f, -10f), plotCameraPosition.position, timeLerped / lerpDuration);
-            mainCameraGO.transform.position = smoothPosition;// + new Vector3(0f, 0f, -1f);
+            mainCameraGO.transform.position = smoothPosition;
 
             float smoothFloat = Mathf.Lerp(defaultCameraZoom, maxCameraZoom, timeLerped / lerpDuration);
             mainCameraGO.GetComponent<Camera>().orthographicSize = smoothFloat;
@@ -187,7 +187,6 @@ public class PlayerController : MonoBehaviour
             timeLerped = 0f;
 
             zoomedOut = true;
-            //zoomedIn = false;
         }
     }
 
@@ -196,7 +195,7 @@ public class PlayerController : MonoBehaviour
         if (timeLerped <= lerpDuration)
         {            
             Vector3 smoothPosition = Vector3.Lerp(plotCameraPosition.position, GetComponentInParent<Transform>().transform.position + new Vector3(0f, 0f, -10f), timeLerped / lerpDuration);
-            mainCameraGO.transform.position = smoothPosition;// + new Vector3(0f, 0f, -10f);
+            mainCameraGO.transform.position = smoothPosition;
 
             float smoothFloat = Mathf.Lerp(maxCameraZoom, defaultCameraZoom, timeLerped / lerpDuration);
             mainCameraGO.GetComponent<Camera>().orthographicSize = smoothFloat;
@@ -214,12 +213,9 @@ public class PlayerController : MonoBehaviour
             timeLerped = 0f;
 
             zoomedOut = false;
-            //zoomedIn = true;
             canOpenBuildMenu = true;
             readyToZoomIn = false;
             playerCanMove = true;
-            
-
         }
     }
 
@@ -294,11 +290,6 @@ public class PlayerController : MonoBehaviour
 
         // Update the hotbar
         HotBarController();
-    }
-
-    void CheckForInput()
-    {
-
     }
 
     public void ActivateAxe(bool axeLoading)
