@@ -16359,7 +16359,7 @@ MonoBehaviour:
   playerScript: {fileID: 455182234}
   wellScript: {fileID: 697228478}
   saveUI: {fileID: 338103922}
-  buildScript: {fileID: 0}
+  buildScript: {fileID: 8931191978908300013, guid: 802670c4c6c0f6f46b4fb659f49609e8, type: 3}
   saveButton: {fileID: 1208791812}
   loadButton: {fileID: 1095074936}
   slotButtonArray:
