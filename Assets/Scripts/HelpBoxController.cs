@@ -1,9 +1,22 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class HelpBoxController : MonoBehaviour
 {
-    public void HelpBoxPressed()
+    public GameObject[] HelpBoxes;
+
+    // Start is called before the first frame update
+    void Start()
     {
-        Destroy(gameObject.GetComponentInParent<GameObject>());
+        for (int i = 0; i < HelpBoxes.Length; i++)
+        {
+            HelpBoxes[i].SetActive(false);
+        }
+    }
+
+    public void ShowHelpBox(int boxNumber)
+    {
+        HelpBoxes[boxNumber].SetActive(true);
     }
 }

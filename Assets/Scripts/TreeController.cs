@@ -113,7 +113,7 @@ public class TreeController : MonoBehaviour
         if (isActive)
         {
             treeTypes[tree].SetActive(true);
-            treeColliderArray[tree].enabled = false;
+            treeColliderArray[tree].enabled = true;
         }
     }
 

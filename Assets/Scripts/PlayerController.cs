@@ -170,8 +170,8 @@ public class PlayerController : MonoBehaviour
     {
         if (timeLerped <= lerpDuration)
         {
-            Vector3 smoothPosition = Vector3.Lerp(transform.position, plotCameraPosition.position, timeLerped / lerpDuration);
-            mainCameraGO.transform.position = smoothPosition + new Vector3(0f, 0f, -1f);
+            Vector3 smoothPosition = Vector3.Lerp(transform.position + new Vector3(0f, 0f, -10f), plotCameraPosition.position, timeLerped / lerpDuration);
+            mainCameraGO.transform.position = smoothPosition;// + new Vector3(0f, 0f, -1f);
 
             float smoothFloat = Mathf.Lerp(defaultCameraZoom, maxCameraZoom, timeLerped / lerpDuration);
             mainCameraGO.GetComponent<Camera>().orthographicSize = smoothFloat;
@@ -196,7 +196,7 @@ public class PlayerController : MonoBehaviour
         if (timeLerped <= lerpDuration)
         {            
             Vector3 smoothPosition = Vector3.Lerp(plotCameraPosition.position, GetComponentInParent<Transform>().transform.position + new Vector3(0f, 0f, -10f), timeLerped / lerpDuration);
-            mainCameraGO.transform.position = smoothPosition + new Vector3(0f, 0f, -10f);
+            mainCameraGO.transform.position = smoothPosition;// + new Vector3(0f, 0f, -10f);
 
             float smoothFloat = Mathf.Lerp(maxCameraZoom, defaultCameraZoom, timeLerped / lerpDuration);
             mainCameraGO.GetComponent<Camera>().orthographicSize = smoothFloat;
