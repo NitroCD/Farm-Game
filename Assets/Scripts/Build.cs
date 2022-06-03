@@ -55,49 +55,45 @@ public class Build : MonoBehaviour
             if (PlayerController.currentHBSlot == 0 && PlayerController.playerLandCount > 0)
             {
                 rotation = Quaternion.Euler(0, 0, 0);
-                thisGO.transform.rotation = rotation;
-                GameObject newLand = Instantiate(tilePrefabs[PlayerController.currentHBSlot], thisGO.transform);
+
+                int type = 0;
+
                 PlayerController.playerLandCount--;
-                button.SetActive(false);
-                isBuilt = true;
 
-                int xPos = (int)thisGO.transform.position.x + 11;
-                int yPos = (int)thisGO.transform.position.y;
-                int tileType = 0;
-                int rotationInt = PlayerController.currentRotation;
-
-                int index = (xPos + (yPos - 1) * 21) - 1;
-
-                Vector2 pos = new Vector2(xPos, yPos);
-
-                int value = SaveTile(pos, tileType, rotationInt);
-
-                gameManager.updateTileArray(index, value);
-
+                BuildTile(type, rotation);
             }
             else if (PlayerController.currentHBSlot == 1 && PlayerController.playerPathCount > 0)
             {
                 rotation = Quaternion.Euler(0, 0, PlayerController.currentRotation * -90);
-                thisGO.transform.rotation = rotation;
-                GameObject newLand = Instantiate(pathPrefabs[PlayerController.dirtPathSelection], thisGO.transform);
+
+                int type = PlayerController.dirtPathSelection;
+                
                 PlayerController.playerPathCount--;
-                button.SetActive(false);
-                isBuilt = true;
 
-                int xPos = (int)thisGO.transform.position.x + 11;
-                int yPos = (int)thisGO.transform.position.y;
-                int tileType = PlayerController.dirtPathSelection + 1;
-                int rotationInt = PlayerController.currentRotation;
-
-                int index = (xPos + (yPos - 1) * 21) - 1;
-
-                Vector2 pos = new Vector2(xPos, yPos);
-
-                int value = SaveTile(pos, tileType, rotationInt);
-
-                gameManager.updateTileArray(index, value);
+                BuildTile(type, rotation);
             }
         }
+    }
+
+    public void BuildTile(int type, Quaternion rotation)
+    {
+        thisGO.transform.rotation = rotation;
+        GameObject newLand = Instantiate(pathPrefabs[PlayerController.dirtPathSelection], thisGO.transform);
+        isBuilt = true;
+        button.SetActive(false);
+
+        int xPos = (int)thisGO.transform.position.x + 11;
+        int yPos = (int)thisGO.transform.position.y;
+        int tileType = PlayerController.dirtPathSelection + 1;
+        int rotationInt = PlayerController.currentRotation;
+
+        int index = (xPos + (yPos - 1) * 21) - 1;
+
+        Vector2 pos = new Vector2(xPos, yPos);
+
+        int value = SaveTile(pos, tileType, rotationInt);
+
+        gameManager.updateTileArray(index, value);
     }
 
     public int SaveTile(Vector2 tilePosition, int tileType, int tileRotation)

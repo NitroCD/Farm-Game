@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     //Building variables
     public GameObject tileButtonPrefab;
     public GameObject tileButtonParent;
+    GameObject[] tileButtonArray = new GameObject[231];
 
     //Saving variables
     public int[] tileArray = new int[231];
@@ -63,6 +64,8 @@ public class GameManager : MonoBehaviour
         SpawnTrees();
         SpawnTreeArray();
         SpawnStoneArray();
+
+        UnpackTileInt(1209023);
     }
 
     //runs when the player presses the "Settings" button in-game
@@ -88,18 +91,41 @@ public class GameManager : MonoBehaviour
 
     void SpawnTileButtons()
     {
-        for(int i= -10; i < 11; i++)
+        for(int x= -10; x < 11; x++)
         {
-            for(int j=1; j < 12; j++)
+            for(int y=1; y < 12; y++)
             {
-                Vector3 position = new Vector3(i, j, 0);
+                Vector3 position = new Vector3(x, y, 0);
                 GameObject newTile = Instantiate(tileButtonPrefab, position, Quaternion.identity);
 
                 newTile.transform.parent = tileButtonParent.transform;
+
+                Debug.Log(x + 10 + (y - 1) * 21);
+
+                tileButtonArray[x+10 + (y-1)*21] = newTile;
             }
         }
         tileButtonParent.SetActive(false);
     }
+
+    void LoadTiles(int index, int type, int rotationInt)
+    {
+        Quaternion rotation = Quaternion.Euler(0,0,rotationInt*-90);
+
+        tileButtonArray[index].GetComponent<Build>().BuildTile(type, rotation);
+    }
+
+    void UnpackTileInt(int value)
+    {
+        int xPos = Mathf.FloorToInt(value / 100000);
+        int yPos = Mathf.FloorToInt(value / 1000 - (xPos * 100));
+        int index = xPos + (yPos - 1) * 21;
+        int type = Mathf.FloorToInt((value / 10) - (xPos * 10000) - (yPos * 100));
+        int rotation = value - (xPos * 100000) - (yPos * 1000) - (type*10);
+        LoadTiles(index - 1, type, rotation);
+    }
+
+    // 1234067
 
     void SpawnStoneArray()
     {
