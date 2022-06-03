@@ -47,7 +47,7 @@ public class Build : MonoBehaviour
         return tileStorage;
     }
 
-    public void BuildTile()
+    public void SetBuildInfo()
     {
         if(!isBuilt)
         {

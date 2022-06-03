@@ -325,7 +325,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8931191978908300013}
         m_TargetAssemblyTypeName: Build, Assembly-CSharp
-        m_MethodName: BuildTile
+        m_MethodName: SetBuildInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
