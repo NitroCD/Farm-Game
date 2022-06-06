@@ -34,9 +34,9 @@ public class GameManager : MonoBehaviour
     //Color slotButtonColour;
     //public static bool saveMenuOpen;
     float saveCooldown = 30f;
-    float timeSinceSave = 0f;
+    float timeSinceSave = -30f;
     float loadCooldown = 30f;
-    float timeSinceLoad = 0f;
+    float timeSinceLoad = -30f;
 
     //Building variables
     public GameObject tileButtonPrefab;
@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     GameObject[] tileButtonArray = new GameObject[231];
 
     //Saving variables
-    public int[] tileArray = new int[231];
+    public int[] localTileArray = new int[231];
     public float playerCash;
     public int[] playerSeeds;
     public int[] playerCrops;
@@ -64,9 +64,6 @@ public class GameManager : MonoBehaviour
         SpawnTrees();
         SpawnTreeArray();
         SpawnStoneArray();
-
-        PlayerController.buildModeActive = true;
-        UnpackTileInt(1209023);
     }
 
     //runs when the player presses the "Settings" button in-game
@@ -98,6 +95,7 @@ public class GameManager : MonoBehaviour
             {
                 Vector3 position = new Vector3(x, y, 0);
                 GameObject newTile = Instantiate(tileButtonPrefab, position, Quaternion.identity);
+                newTile.GetComponent<Build>().gameManager = gameObject.GetComponent<GameManager>();
 
                 newTile.transform.parent = tileButtonParent.transform;
 
@@ -193,14 +191,16 @@ public class GameManager : MonoBehaviour
         if (File.Exists(saveDestination))
         {
             saveFile = File.OpenWrite(saveDestination);
+            Debug.Log("Found an existing file at: " + saveDestination);
         }
         else
         {
             saveFile = File.Create(saveDestination);
+            Debug.Log("Created a new file at: " + saveDestination);
         }
 
         GetData();
-        GameData saveData = new GameData(tileArray, playerCash, playerSeeds, playerCrops, playerWood, playerOres, playerPaths, playerLand, wellStatus, bucketStatus, axeStatus, pickaxeStatus);
+        GameData saveData = new GameData(localTileArray, playerCash, playerSeeds, playerCrops, playerWood, playerOres, playerPaths, playerLand, wellStatus, bucketStatus, axeStatus, pickaxeStatus);
         BinaryFormatter formatter = new BinaryFormatter();
         formatter.Serialize(saveFile, saveDestination);
         saveFile.Close();
@@ -211,8 +211,11 @@ public class GameManager : MonoBehaviour
         Debug.Log("load pressed");
         if (Time.time > timeSinceLoad + loadCooldown)
         {
+            PlayerController.buildModeActive = true;
             timeSinceLoad = Time.time;
             LoadGame();
+            PlayerController.buildModeActive = false;
+            Debug.Log("Loaded the game");
         }
     }
     
@@ -232,14 +235,14 @@ public class GameManager : MonoBehaviour
         }
 
         BinaryFormatter formatter = new BinaryFormatter();
-        GameData saveData = (GameData)formatter.Deserialize(saveFile);
+        GameData saveData = formatter.Deserialize(saveFile) as GameData;
         SetData(saveData);
         saveFile.Close();
     }
 
     void SetData(GameData saveData)
     {
-        tileArray = saveData.tileArray;
+        localTileArray = saveData.tileArray;
         PlayerController.playerMoney = saveData.money;
         PlayerController.seeds = saveData.seeds;
         PlayerController.crops = saveData.crops;
@@ -255,32 +258,15 @@ public class GameManager : MonoBehaviour
 
     void SetTiles()
     {
-        for(int i = 0; i < tileArray.Length; i++)
+        for(int i = 0; i < localTileArray.Length; i++)
         {
-            int num = tileArray[i];
-            if(num != 0)
-            {
-
-            }
+            UnpackTileInt(localTileArray[i]);
         }
     }
 
     //stores important save game information into local variables such as the player's cash
     void GetData()
     {
-        //money
-        //seeds
-        //crops
-        //wood
-        //stones
-        //path tiles
-        //farmland
-        //well status
-        //bucket status
-        //axe status
-        //picaxe status
-
-
         playerCash = PlayerController.playerMoney;
         playerSeeds = PlayerController.seeds;
         playerCrops = PlayerController.crops;
@@ -296,83 +282,6 @@ public class GameManager : MonoBehaviour
 
     public void updateTileArray(int index, int value)
     {
-        tileArray[index] = value;
+        localTileArray[index] = value;
     }
-
-
-
-    /*void OldSavingAndLoading()
-    {
-        //save
-
-        GetData();
-        //stores all of the data in PlayerPrefs
-        PlayerPrefs.SetFloat("Player Cash", playerSaveCash);
-
-        PlayerPrefs.SetInt("Player Crops 0", playerSaveCropCount[0]);
-        PlayerPrefs.SetInt("Player Crops 1", playerSaveCropCount[1]);
-        PlayerPrefs.SetInt("Player Crops 2", playerSaveCropCount[2]);
-
-        PlayerPrefs.SetInt("Player Seeds 0", playerSaveSeedsCount[0]);
-        PlayerPrefs.SetInt("Player Seeds 1", playerSaveSeedsCount[1]);
-        PlayerPrefs.SetInt("Player Seeds 2", playerSaveSeedsCount[2]);
-
-        PlayerPrefs.SetInt("Player Land", playerSaveLandCount);
-        PlayerPrefs.SetInt("Player Wood", playerSaveWoodCount);
-        PlayerPrefs.SetInt("Player Well Status", wellStatusSave);
-        PlayerPrefs.SetInt("Player Water Can Status", waterCanStatusSave);
-        PlayerPrefs.SetInt("Player Axe Status", axeStatusSave);
-        PlayerPrefs.SetInt("Player Pickaxe Status", pickaxeStatusSave);
-        PlayerPrefs.SetInt("Player Plots", playerPlotSave);
-
-
-
-        //load
-        int[] crops = new int[3];
-        int[] seeds = new int[3];
-
-        //takes the player's cash, wheat, and seeds from the PlayerPrefs file
-        float cash = PlayerPrefs.GetFloat("Player Cash");
-
-        crops[0] = PlayerPrefs.GetInt("Player Crops 0");
-        crops[1] = PlayerPrefs.GetInt("Player Crops 1");
-        crops[2] = PlayerPrefs.GetInt("Player Crops 2");
-
-        seeds[0] = PlayerPrefs.GetInt("Player Seeds 0");
-        seeds[1] = PlayerPrefs.GetInt("Player Seeds 1");
-        seeds[2] = PlayerPrefs.GetInt("Player Seeds 2");
-
-        int wood = PlayerPrefs.GetInt("Player Wood");
-
-        int stone = PlayerPrefs.GetInt("Player Stone");
-
-        //Runs a function on the PlayerController script and passes it the PlayerPrefs data so it can be loaded
-        playerScript.LoadGame(cash, seeds, crops, wood, stone);
-
-        //takes the land count from PlayerPrefs and passes it to the LandController so it can be spawned
-        int landCount = PlayerPrefs.GetInt("Player Land");
-        int plotCount = PlayerPrefs.GetInt("Player Plots");
-        //landPurchaseScript.LoadGame(landCount, plotCount);
-
-        //Takes the purchased or unpurchased status from the PlayerPrefs and sends it to the WellController
-        int wellStatus = PlayerPrefs.GetInt("Player Well Status");
-        wellScript.LoadGame(wellStatus);
-
-        //Takes the status of the tools from PlayerPrefs and sends it to the PlayerController
-        int canStatus = PlayerPrefs.GetInt("Player Water Can Status");
-        if (canStatus > 0)
-        { playerScript.ActivateWateringCan(true); }
-        int axeStatus = PlayerPrefs.GetInt("Player Axe Status");
-        if (axeStatus > 0)
-        { playerScript.ActivateAxe(true); }
-        int pickaxeStatus = PlayerPrefs.GetInt("Player Pickaxe Status");
-        if (pickaxeStatus > 0)
-        { playerScript.ActivatePickaxe(true); }
-        Debug.Log("this is running");
-
-        //Prints the loaded data to the console
-        Debug.Log("Loaded Cash:" + cash);
-        Debug.Log("Loaded Land:" + landCount);
-        Debug.Log("Loaded Well:" + wellStatus);
-    }*/
 }

@@ -11,7 +11,6 @@ public class Build : MonoBehaviour
     public GameObject[] pathPrefabs;
     int[] tileStorage;
     public GameObject button;
-    public GameObject gameManagerGO;
     public GameManager gameManager;
 
     bool isBuilt = false;
@@ -20,7 +19,6 @@ public class Build : MonoBehaviour
     void Start()
     {
         tileStorage = new int[21 * 11];
-        gameManager = gameManagerGO.GetComponent<GameManager>();
     }
 
     // Update is called once per frame
