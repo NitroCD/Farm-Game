@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour
         SpawnTreeArray();
         SpawnStoneArray();
 
+        PlayerController.buildModeActive = true;
         UnpackTileInt(1209023);
     }
 
@@ -99,8 +100,6 @@ public class GameManager : MonoBehaviour
                 GameObject newTile = Instantiate(tileButtonPrefab, position, Quaternion.identity);
 
                 newTile.transform.parent = tileButtonParent.transform;
-
-                Debug.Log(x + 10 + (y - 1) * 21);
 
                 tileButtonArray[x+10 + (y-1)*21] = newTile;
             }

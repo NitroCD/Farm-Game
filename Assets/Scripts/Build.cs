@@ -11,8 +11,8 @@ public class Build : MonoBehaviour
     public GameObject[] pathPrefabs;
     int[] tileStorage;
     public GameObject button;
-    GameObject thisGO;
-    GameManager gameManager;
+    public GameObject gameManagerGO;
+    public GameManager gameManager;
 
     bool isBuilt = false;
 
@@ -20,7 +20,7 @@ public class Build : MonoBehaviour
     void Start()
     {
         tileStorage = new int[21 * 11];
-        thisGO = gameObject;   
+        gameManager = gameManagerGO.GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -77,13 +77,14 @@ public class Build : MonoBehaviour
 
     public void BuildTile(int type, Quaternion rotation)
     {
-        thisGO.transform.rotation = rotation;
-        GameObject newLand = Instantiate(pathPrefabs[PlayerController.dirtPathSelection], thisGO.transform);
+        gameObject.transform.rotation = rotation;
+        GameObject newLand = Instantiate(pathPrefabs[PlayerController.dirtPathSelection], gameObject.transform);
         isBuilt = true;
         button.SetActive(false);
+        
 
-        int xPos = (int)thisGO.transform.position.x + 11;
-        int yPos = (int)thisGO.transform.position.y;
+        int xPos = (int)gameObject.transform.position.x + 11;
+        int yPos = (int)gameObject.transform.position.y;
         int tileType = PlayerController.dirtPathSelection + 1;
         int rotationInt = PlayerController.currentRotation;
 
