@@ -5,11 +5,6 @@ using UnityEngine.UI;
 
 public class HelpBoxHider : MonoBehaviour
 {
-    public void Start()
-    {
-        Debug.Log(Application.persistentDataPath);
-    }
-
     public void HelpBoxPressed()
     {
         gameObject.SetActive(false);
