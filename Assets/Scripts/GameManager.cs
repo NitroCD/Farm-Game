@@ -235,9 +235,10 @@ public class GameManager : MonoBehaviour
         }
 
         BinaryFormatter formatter = new BinaryFormatter();
-        GameData saveData = formatter.Deserialize(saveFile) as GameData;
-        SetData(saveData);
+        GameData saveData = (GameData) formatter.Deserialize(saveFile);
         saveFile.Close();
+
+        SetData(saveData);
     }
 
     void SetData(GameData saveData)
