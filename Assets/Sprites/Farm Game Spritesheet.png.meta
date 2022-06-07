@@ -248,6 +248,9 @@ TextureImporter:
   - first:
       213: -1063748065297224155
     second: pathStone
+  - first:
+      213: 8397671867261520520
+    second: Cloud
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -2054,6 +2057,27 @@ TextureImporter:
       bones: []
       spriteID: 52e237545cecc31f0800000000000000
       internalID: -1063748065297224155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cloud
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 164
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88a0a6c02168a8470800000000000000
+      internalID: 8397671867261520520
       vertices: []
       indices: 
       edges: []
