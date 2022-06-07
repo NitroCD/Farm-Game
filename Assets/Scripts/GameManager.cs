@@ -216,10 +216,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("load pressed");
         if (Time.time > timeSinceLoad + loadCooldown)
         {
-            PlayerController.buildModeActive = true;
             timeSinceLoad = Time.time;
             LoadGame();
-            PlayerController.buildModeActive = false;
             Debug.Log("Loaded the game");
         }
     }
@@ -265,6 +263,7 @@ public class GameManager : MonoBehaviour
 
     void SetTiles()
     {
+        PlayerController.buildModeActive = true;
         for(int i = 0; i < localTileArray.Length; i++)
         {
             UnpackTileInt(localTileArray[i]);
