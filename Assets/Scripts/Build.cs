@@ -64,7 +64,7 @@ public class Build : MonoBehaviour
             {
                 rotation = Quaternion.Euler(0, 0, PlayerController.currentRotation * -90);
 
-                int type = PlayerController.dirtPathSelection;
+                int type = PlayerController.dirtPathSelection + 1;
                 
                 PlayerController.playerPathCount--;
 
@@ -75,15 +75,23 @@ public class Build : MonoBehaviour
 
     public void BuildTile(int type, Quaternion rotation)
     {
+        int tileType = 0;
         gameObject.transform.rotation = rotation;
-        GameObject newLand = Instantiate(pathPrefabs[PlayerController.dirtPathSelection], gameObject.transform);
+        if(type == 0)
+        {
+            GameObject newLand = Instantiate(tilePrefabs[0], gameObject.transform);
+        }
+        else
+        {
+            GameObject newLand = Instantiate(pathPrefabs[type - 1], gameObject.transform);
+            tileType = PlayerController.dirtPathSelection + 1;
+        }
         isBuilt = true;
         button.SetActive(false);
         
 
         int xPos = (int)gameObject.transform.position.x + 11;
         int yPos = (int)gameObject.transform.position.y;
-        int tileType = PlayerController.dirtPathSelection + 1;
         int rotationInt = PlayerController.currentRotation;
 
         int index = (xPos + (yPos - 1) * 21) - 1;

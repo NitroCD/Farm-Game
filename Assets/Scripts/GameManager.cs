@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization.Json;
 
 public class GameManager : MonoBehaviour
 {
@@ -114,6 +115,10 @@ public class GameManager : MonoBehaviour
 
     void UnpackTileInt(int value)
     {
+        if(value == 0)
+        {
+            return;
+        }
         int xPos = Mathf.FloorToInt(value / 100000);
         int yPos = Mathf.FloorToInt(value / 1000 - (xPos * 100));
         int index = xPos + (yPos - 1) * 21;
@@ -202,7 +207,7 @@ public class GameManager : MonoBehaviour
         GetData();
         GameData saveData = new GameData(localTileArray, playerCash, playerSeeds, playerCrops, playerWood, playerOres, playerPaths, playerLand, wellStatus, bucketStatus, axeStatus, pickaxeStatus);
         BinaryFormatter formatter = new BinaryFormatter();
-        formatter.Serialize(saveFile, saveDestination);
+        formatter.Serialize(saveFile, saveData);
         saveFile.Close();
     }
 
@@ -235,7 +240,7 @@ public class GameManager : MonoBehaviour
         }
 
         BinaryFormatter formatter = new BinaryFormatter();
-        GameData saveData = (GameData) formatter.Deserialize(saveFile);
+        GameData saveData = (GameData)formatter.Deserialize(saveFile);
         saveFile.Close();
 
         SetData(saveData);
@@ -255,6 +260,7 @@ public class GameManager : MonoBehaviour
         PlayerController.wateringCanUnlocked = saveData.bucket;
         PlayerController.axeUnlocked = saveData.axe;
         PlayerController.pickaxeUnlocked = saveData.pickaxe;
+        SetTiles();
     }
 
     void SetTiles()
