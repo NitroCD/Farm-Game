@@ -16506,6 +16506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2c70f44ca2d88741b0aeec505575374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 455182234}
   treePrefab: {fileID: 7438911926074796192, guid: 33b30b1dc5dec8240b4b7c6453c278ef, type: 3}
   treeSpawnAreas:
   - {fileID: 1949476625}

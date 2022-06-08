@@ -7,6 +7,8 @@ using System.Runtime.Serialization.Json;
 
 public class GameManager : MonoBehaviour
 {
+    public PlayerController playerController;
+
     //Tree variables
     public GameObject treePrefab;
     public Transform[] treeSpawnAreas;
@@ -257,7 +259,15 @@ public class GameManager : MonoBehaviour
         WellController.isPurchased = saveData.well;
         PlayerController.wateringCanUnlocked = saveData.bucket;
         PlayerController.axeUnlocked = saveData.axe;
+        if (saveData.axe)
+        {
+            playerController.ActivateAxe(true);
+        }
         PlayerController.pickaxeUnlocked = saveData.pickaxe;
+        if(saveData.pickaxe)
+        {
+            playerController.ActivatePickaxe(true);
+        }
         SetTiles();
     }
 
