@@ -2819,6 +2819,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 503846277}
     m_Modifications:
+    - target: {fileID: 490384321051862893, guid: 19331e582eea9ec408df80975fd198b1, type: 3}
+      propertyPath: thisHelpBox
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8556603041312082985, guid: 19331e582eea9ec408df80975fd198b1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7906,7 +7910,7 @@ GameObject:
   - component: {fileID: 503846278}
   m_Layer: 5
   m_Name: Tutorial Boxes
-  m_TagString: Untagged
+  m_TagString: HelpBoxController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7955,6 +7959,7 @@ MonoBehaviour:
   - {fileID: 615880828}
   - {fileID: 1884422868}
   - {fileID: 1734032540}
+  BoxesShown: 
 --- !u!4 &504740588 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3631474540318890063, guid: 6d92cfcd592c7af4ab220bf74d8aa1ee, type: 3}
@@ -29955,6 +29960,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 503846277}
     m_Modifications:
+    - target: {fileID: 490384321051862893, guid: 19331e582eea9ec408df80975fd198b1, type: 3}
+      propertyPath: thisHelpBox
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8556603041312082985, guid: 19331e582eea9ec408df80975fd198b1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -36838,6 +36847,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 503846277}
     m_Modifications:
+    - target: {fileID: 490384321051862893, guid: 19331e582eea9ec408df80975fd198b1, type: 3}
+      propertyPath: thisHelpBox
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8556603041312082985, guid: 19331e582eea9ec408df80975fd198b1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -38401,6 +38414,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 503846277}
     m_Modifications:
+    - target: {fileID: 490384321051862893, guid: 19331e582eea9ec408df80975fd198b1, type: 3}
+      propertyPath: thisHelpBox
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8556603041312082985, guid: 19331e582eea9ec408df80975fd198b1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -42315,6 +42332,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 503846277}
     m_Modifications:
+    - target: {fileID: 490384321051862893, guid: 19331e582eea9ec408df80975fd198b1, type: 3}
+      propertyPath: thisHelpBox
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8556603041312082985, guid: 19331e582eea9ec408df80975fd198b1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
