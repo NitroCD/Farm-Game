@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using System.Runtime.Serialization.Json;
 
 public class GameManager : MonoBehaviour
 {
@@ -90,6 +89,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //Spawns the tile buttons that you click to build on once the game starts
     void SpawnTileButtons()
     {
         for(int x= -10; x < 11; x++)
@@ -107,7 +107,8 @@ public class GameManager : MonoBehaviour
         }
         tileButtonParent.SetActive(false);
     }
-
+    
+    //Used for spawning a certain type of tile at a certain position when you load the game
     void LoadTiles(int index, int type, int rotationInt)
     {
         Quaternion rotation = Quaternion.Euler(0,0,rotationInt*-90);
@@ -115,6 +116,7 @@ public class GameManager : MonoBehaviour
         tileButtonArray[index].GetComponent<Build>().BuildTile(type, rotation);
     }
 
+    //Mathematical function that extracts the data from a 7 digit saved number and turns it into the nesescary perameters for LoadTiles
     void UnpackTileInt(int value)
     {
         if(value == 0)
@@ -129,8 +131,7 @@ public class GameManager : MonoBehaviour
         LoadTiles(index - 1, type, rotation);
     }
 
-    // 1234067
-
+    //Spawns the initial stones when you start the game
     void SpawnStoneArray()
     {
         bool canSpawn = true;
@@ -155,6 +156,7 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    //Spawns initial trees upon game start
     void SpawnTreeArray()
     {
         bool canSpawn = true;
@@ -180,6 +182,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //Called when the save button is pressed
     public void SaveButtonPress()
     {
         Debug.Log("save pressed");
@@ -189,7 +192,7 @@ public class GameManager : MonoBehaviour
             SaveGame();
         }
     }
-
+    //Saves the game
     public void SaveGame()
     {
         string saveDestination = Application.persistentDataPath + "/save.dat";
@@ -212,7 +215,7 @@ public class GameManager : MonoBehaviour
         formatter.Serialize(saveFile, saveData);
         saveFile.Close();
     }
-
+    //Called when the load button is pressed
     public void LoadButtonPress()
     {
         Debug.Log("load pressed");
@@ -223,7 +226,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("Loaded the game");
         }
     }
-    
+    //Loads the game
     public void LoadGame()
     {
         string saveDestination = Application.persistentDataPath + "/save.dat";
@@ -245,7 +248,7 @@ public class GameManager : MonoBehaviour
 
         SetData(saveData);
     }
-
+    //Called from LoadGame, sets all of the important game variables to those stored in the save file
     void SetData(GameData saveData)
     {
         localTileArray = saveData.tileArray;
@@ -270,7 +273,7 @@ public class GameManager : MonoBehaviour
         }
         SetTiles();
     }
-
+    //Calls UnpackTileInt for every saved tile that has a value greater than 0
     void SetTiles()
     {
         PlayerController.buildModeActive = true;
@@ -281,6 +284,7 @@ public class GameManager : MonoBehaviour
     }
 
     //stores important save game information into local variables such as the player's cash
+    //This data is what gets saved
     void GetData()
     {
         playerCash = PlayerController.playerMoney;
@@ -295,7 +299,7 @@ public class GameManager : MonoBehaviour
         axeStatus = PlayerController.axeUnlocked;
         pickaxeStatus = PlayerController.pickaxeUnlocked;
 }
-
+    //Called from the Build script every time a tile is updated in the array. This information then will eventually be saved.
     public void updateTileArray(int index, int value)
     {
         localTileArray[index] = value;

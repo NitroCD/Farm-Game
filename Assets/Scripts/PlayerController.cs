@@ -165,7 +165,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Home))
         { playerMoney *= 2; }
     }
-
+    //Called when the player enters build mode
     public void MoveCameraOut()
     {
         if (timeLerped <= lerpDuration)
@@ -189,7 +189,7 @@ public class PlayerController : MonoBehaviour
             zoomedOut = true;
         }
     }
-
+    //Called when the player exits build mode
     public void MoveCameraIn()
     {
         if (timeLerped <= lerpDuration)
@@ -217,23 +217,6 @@ public class PlayerController : MonoBehaviour
             readyToZoomIn = false;
             playerCanMove = true;
         }
-    }
-
-    //sets the player's important variables to those stored in PlayerPrefs
-    public void LoadGame(float playerLoadedMoney, int[] playerLoadedSeeds, int[] playerLoadedCrops, int playerLoadedWood, int playerLoadedStone)
-    {
-        playerMoney = playerLoadedMoney;
-
-        seeds[0] = playerLoadedSeeds[0];
-        seeds[1] = playerLoadedSeeds[1];
-        seeds[2] = playerLoadedSeeds[2];
-
-        crops[0] = playerLoadedCrops[0];
-        crops[1] = playerLoadedCrops[1];
-        crops[2] = playerLoadedCrops[2];
-
-        playerWoodCount = playerLoadedWood;
-        playerOreCount[0] = playerLoadedStone;
     }
 
     void Movement()
@@ -291,7 +274,7 @@ public class PlayerController : MonoBehaviour
         // Update the hotbar
         HotBarController();
     }
-
+    //Called when the player loads the game or buys the item
     public void ActivateAxe(bool axeLoading)
     {
         if (playerMoney >= axePrice && !axeUnlocked)
@@ -308,7 +291,7 @@ public class PlayerController : MonoBehaviour
             woodUI.SetActive(true);
         }
     }
-
+    //Called when the player loads the game or buys the item
     public void ActivatePickaxe(bool pickaxeLoading)
     {
         if (playerMoney >= pickaxePrice && !pickaxeUnlocked)
@@ -325,7 +308,7 @@ public class PlayerController : MonoBehaviour
             stoneUI.SetActive(true);
         }
     }
-
+    //Called when the player loads the game or buys the item
     public void ActivateWateringCan(bool canLoading)
     {
         if (playerMoney >= wateringCanPrice && !wateringCanUnlocked)
@@ -340,7 +323,7 @@ public class PlayerController : MonoBehaviour
             playerWateringCan.SetActive(true);
         }
     }
-
+    //Used to control the activation and deactivation of build mode
     public void BuildMode()
     {
         //disables opening menu while its zooming in
@@ -378,7 +361,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
+    //Controls the visual and functional aspects of the hotbar
     void HotBarController()
     {
         //only the first time, reset the hotbar
@@ -450,14 +433,14 @@ public class PlayerController : MonoBehaviour
         if (currentHotbar == Hotbar.Tool || currentHBSlot != 1)
         { dirtPathHotbar.SetActive(false); }
     }
-
+    //Called whenever the player changes their hotbar selection
     void SetHBSlot(int hbslot)
     {
         currentHBSlot = hbslot;
         ResetHotbarSelection();
         hotbarSelectionArray[currentHBSlot].SetActive(true);
     }
-
+    //Called whenever the player changes their hotbar selection
     void ResetHotbar()
     {
         //spawn in the current hotbar's objects
@@ -482,7 +465,7 @@ public class PlayerController : MonoBehaviour
             { buildHBPrefabs[i].SetActive(true); }
         }
     }
-    
+    //Used to change the little preview icon to the left of the screen when in build mode to show the player what they are going to place
     void ChangeBuildPreview()
     {
         //get rid of the old preview
@@ -508,18 +491,18 @@ public class PlayerController : MonoBehaviour
         // put a new preview
         currentPreview = Instantiate(previewArray[previewType], previewParent.transform);
     }
-
+    //Used to select the type of path the player wants to build
     public void PathSelection(int selection)
     {
         dirtPathSelection = selection;
         ChangeBuildPreview();
     }
-
+    //Used to select the type of seed the player wants to plant
     public void SeedSelection(int seedType)
     {
         seedSelection = seedType;
     }
-
+    //Used to update the sprite and number on the watering can to reflect how full it is
     void UpdateWateringCan()
     {
         if (wateringCanUnlocked)
