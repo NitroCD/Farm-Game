@@ -102,6 +102,8 @@ public class PlayerController : MonoBehaviour
     bool readyToZoomIn = false;
     bool canOpenBuildMenu = true;
 
+    HelpBoxController thisHelpBoxController;
+
     void Start()
     {
         //Setting variables for the start of the game
@@ -117,6 +119,8 @@ public class PlayerController : MonoBehaviour
         for (int i = 0; i < playerOreCount.Length; i++)
         { playerOreCount[i] = 0; }
         waterCountComparable = playerWaterCount;
+
+        thisHelpBoxController = GameObject.FindGameObjectWithTag("HelpBoxController").GetComponent<HelpBoxController>();
 
         //reset the tools
         playerWateringCan.SetActive(false);
@@ -165,6 +169,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Home))
         { playerMoney *= 2; }
     }
+
     //Called when the player enters build mode
     public void MoveCameraOut()
     {
@@ -189,6 +194,7 @@ public class PlayerController : MonoBehaviour
             zoomedOut = true;
         }
     }
+
     //Called when the player exits build mode
     public void MoveCameraIn()
     {
@@ -274,6 +280,7 @@ public class PlayerController : MonoBehaviour
         // Update the hotbar
         HotBarController();
     }
+
     //Called when the player loads the game or buys the item
     public void ActivateAxe(bool axeLoading)
     {
@@ -291,6 +298,7 @@ public class PlayerController : MonoBehaviour
             woodUI.SetActive(true);
         }
     }
+
     //Called when the player loads the game or buys the item
     public void ActivatePickaxe(bool pickaxeLoading)
     {
@@ -300,6 +308,7 @@ public class PlayerController : MonoBehaviour
             pickaxeUnlocked = true;
             playerPickaxe.SetActive(true);
             stoneUI.SetActive(true);
+            thisHelpBoxController.ShowHelpBox(BoxNumber.stoneUnlocked);
         }
         if (pickaxeLoading)
         {
@@ -346,6 +355,7 @@ public class PlayerController : MonoBehaviour
             { MoveCameraOut(); }
             previewArray[0].SetActive(true);
             tileUI.SetActive(true);
+            thisHelpBoxController.ShowHelpBox(BoxNumber.buildOpened1);
             
             //zoom in when ready
             if (zoomedOut & Input.GetKeyDown(KeyCode.Escape))

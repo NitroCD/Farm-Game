@@ -59,6 +59,8 @@ public class GameManager : MonoBehaviour
     public bool axeStatus;
     public bool pickaxeStatus;
 
+    HelpBoxController thisHelpBoxController;
+
     void Start()
     {
         SaveMenuCloser();
@@ -66,6 +68,8 @@ public class GameManager : MonoBehaviour
         SpawnTrees();
         SpawnTreeArray();
         SpawnStoneArray();
+        thisHelpBoxController = GameObject.FindGameObjectWithTag("HelpBoxController").GetComponent<HelpBoxController>();
+        thisHelpBoxController.ShowHelpBox(BoxNumber.startGame);
     }
 
     //runs when the player presses the "Settings" button in-game
@@ -116,7 +120,7 @@ public class GameManager : MonoBehaviour
         tileButtonArray[index].GetComponent<Build>().BuildTile(type, rotation);
     }
 
-    //Mathematical function that extracts the data from a 7 digit saved number and turns it into the nesescary perameters for LoadTiles
+    //Mathematical function that extracts the data from a 7 digit saved number and turns it into the necessary perameters for LoadTiles
     void UnpackTileInt(int value)
     {
         if(value == 0)

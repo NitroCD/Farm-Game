@@ -6,6 +6,7 @@ TagManager:
   tags:
   - land
   - Dirt Path
+  - HelpBoxController
   layers:
   - Default
   - TransparentFX
