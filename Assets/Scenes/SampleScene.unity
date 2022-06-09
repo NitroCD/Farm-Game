@@ -7219,6 +7219,14 @@ MonoBehaviour:
   - {fileID: 494153754}
   - {fileID: 1877520063}
   - {fileID: 142166200}
+  cropUIs:
+  - {fileID: 124084948}
+  - {fileID: 692460531}
+  - {fileID: 307508841}
+  seedUIs:
+  - {fileID: 298117675}
+  - {fileID: 2020218579}
+  - {fileID: 971802212}
   waterText: {fileID: 1355690900}
   woodText: {fileID: 1140969549}
   stonesText:
@@ -38508,7 +38516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8556603042715370176, guid: 19331e582eea9ec408df80975fd198b1, type: 3}
       propertyPath: m_Text
-      value: ...and the mouse to select that slots options.
+      value: ...and the mouse to select that slot's options.
       objectReference: {fileID: 0}
     - target: {fileID: 8701510624661389718, guid: 19331e582eea9ec408df80975fd198b1, type: 3}
       propertyPath: m_AnchoredPosition.x

@@ -12,10 +12,14 @@ public class Shop : MonoBehaviour
     public GameObject seedsUI;
     bool openedUI= false;
     //public BuyLand buyLandScript;
+    HelpBoxController thisHelpBoxController;
+    PlayerController thisPlayerController;
 
     private void Start()
     {
         OpenUI();
+        thisHelpBoxController = GameObject.FindGameObjectWithTag("HelpBoxController").GetComponent<HelpBoxController>();
+        thisPlayerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     // Checks for player input while they stand on the tile
@@ -65,11 +69,23 @@ public class Shop : MonoBehaviour
         {
             PlayerController.playerMoney -= seedPrice[seedType] * 10;
             PlayerController.seeds[seedType] += 10;
+            if (seedType == 1 || seedType == 2)
+            {
+                thisPlayerController.cropUIs[seedType].SetActive(true);
+                thisPlayerController.seedUIs[seedType].SetActive(true);
+                thisHelpBoxController.ShowHelpBox(BoxNumber.seedsUnlocked);
+            }
         }
         else if (PlayerController.playerMoney >= seedPrice[seedType])
         {
             PlayerController.playerMoney -= seedPrice[seedType];
             PlayerController.seeds[seedType]++;
+            if (seedType == 1 || seedType == 2)
+            {
+                thisPlayerController.cropUIs[seedType].SetActive(true);
+                thisPlayerController.seedUIs[seedType].SetActive(true);
+                thisHelpBoxController.ShowHelpBox(BoxNumber.seedsUnlocked);
+            }
         }
     }
 
@@ -80,18 +96,18 @@ public class Shop : MonoBehaviour
             PlayerController.playerMoney -= pathPrice * 10;
             PlayerController.playerPathCount += 10;
         }
-        else if (PlayerController.playerMoney >= landPrice)
+        else if (PlayerController.playerMoney >= pathPrice)
         {
-            PlayerController.playerMoney -= landPrice;
-            PlayerController.playerLandCount++;
+            PlayerController.playerMoney -= pathPrice;
+            PlayerController.playerPathCount++;
         }
     }
 
     public void BuyLand()
     {
-        if(PlayerController.playerMoney >= landPrice*10 && Input.GetKey(KeyCode.LeftShift))
+        if(PlayerController.playerMoney >= landPrice * 10 && Input.GetKey(KeyCode.LeftShift))
         {
-            PlayerController.playerMoney -= landPrice*10;
+            PlayerController.playerMoney -= landPrice * 10;
             PlayerController.playerLandCount += 10;
         }
         else if (PlayerController.playerMoney >= landPrice)

@@ -46,6 +46,8 @@ public class PlayerController : MonoBehaviour
     public Text moneyText;
     public Text[] cropText;
     public Text[] seedsText;
+    public GameObject[] cropUIs;
+    public GameObject[] seedUIs;
     public Text waterText;
     public Text woodText;
     public Text[] stonesText;
@@ -115,6 +117,10 @@ public class PlayerController : MonoBehaviour
         crops[0] = 0;
         crops[1] = 0;
         crops[2] = 0;
+        cropUIs[1].SetActive(false);
+        cropUIs[2].SetActive(false);
+        seedUIs[1].SetActive(false);
+        seedUIs[2].SetActive(false);
         playerWoodCount = 0;
         for (int i = 0; i < playerOreCount.Length; i++)
         { playerOreCount[i] = 0; }

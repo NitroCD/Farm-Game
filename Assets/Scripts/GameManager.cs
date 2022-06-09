@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
     public bool pickaxeStatus;
 
     HelpBoxController thisHelpBoxController;
+    PlayerController thisPlayerController;
 
     void Start()
     {
@@ -70,6 +71,7 @@ public class GameManager : MonoBehaviour
         SpawnStoneArray();
         thisHelpBoxController = GameObject.FindGameObjectWithTag("HelpBoxController").GetComponent<HelpBoxController>();
         thisHelpBoxController.ShowHelpBox(BoxNumber.startGame);
+        thisPlayerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     //runs when the player presses the "Settings" button in-game
@@ -258,6 +260,16 @@ public class GameManager : MonoBehaviour
         localTileArray = saveData.tileArray;
         PlayerController.playerMoney = saveData.money;
         PlayerController.seeds = saveData.seeds;
+        if (saveData.seeds[1] > 0)
+        {
+            thisPlayerController.cropUIs[1].SetActive(true);
+            thisPlayerController.seedUIs[1].SetActive(true);
+        }
+        if (saveData.seeds[2] > 0)
+        {
+            thisPlayerController.cropUIs[2].SetActive(true);
+            thisPlayerController.seedUIs[2].SetActive(true);
+        }
         PlayerController.crops = saveData.crops;
         PlayerController.playerWoodCount = saveData.wood;
         PlayerController.playerOreCount = saveData.ores;

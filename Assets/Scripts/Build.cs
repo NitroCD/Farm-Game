@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Build : MonoBehaviour
 {
-    //test!!!!!
     Transform selectedPos;
     Quaternion rotation;
     public GameObject[] tilePrefabs;
