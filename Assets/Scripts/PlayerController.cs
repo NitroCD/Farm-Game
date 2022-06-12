@@ -165,7 +165,7 @@ public class PlayerController : MonoBehaviour
         { StopMoving(); }
 
         if(buildModeActive)
-        { BuildMode(); }
+        { BuildMode(false); }
         else if (readyToZoomIn)
         { MoveCameraIn(); }
 
@@ -339,7 +339,7 @@ public class PlayerController : MonoBehaviour
         }
     }
     //Used to control the activation and deactivation of build mode
-    public void BuildMode()
+    public void BuildMode(bool buildButtonPressed)
     {
         //disables opening menu while its zooming in
         if (canOpenBuildMenu)
@@ -364,7 +364,7 @@ public class PlayerController : MonoBehaviour
             thisHelpBoxController.ShowHelpBox(BoxNumber.buildOpened1);
             
             //zoom in when ready
-            if (zoomedOut & Input.GetKeyDown(KeyCode.Escape))
+            if (zoomedOut & (Input.GetKeyDown(KeyCode.Escape) || buildButtonPressed))
             {
                 buildModeActive = false;
                 inventoryUI.SetActive(true);
